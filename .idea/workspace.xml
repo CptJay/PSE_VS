@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="untitled" targetName="ttt" />
+      <config projectName="untitled" targetName="ttt_debug" />
+    </generated>
+  </component>
+  <component name="CMakeSettings" AUTO_RELOAD="true">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" GENERATION_DIR="$PROJECT_DIR$/../PSE_Verkeerssimulatie" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="dd021064-0a01-4056-aedc-783ddad215e8" name="Changes" comment="Project">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Bushalte.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Bushalte.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Kruispunt.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Kruispunt.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/projectExporter.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/projectExporter.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/projectImporter.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/projectImporter.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/projectUtils.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/projectUtils.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/projectDomainTests.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/projectInputTests.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/projectOutputTests.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/projectTests.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/clion-environment.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/cmake.check_cache" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/cmake.check_cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/ttt.dir/CXX.includecache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/ttt.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/ttt.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/ttt.dir/TinyXML/tinystr.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/ttt.dir/TinyXML/tinyxml.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/ttt.dir/TinyXML/tinyxmlerror.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/ttt.dir/TinyXML/tinyxmlparser.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/ttt.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/ttt.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/ttt.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/ttt.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/ttt.dir/depend.internal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/ttt.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/ttt.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/ttt.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/ttt.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/ttt.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/ttt.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/ttt.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/ttt.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/ttt.dir/src/Baan.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/ttt.dir/src/Verkeerslicht.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/ttt.dir/src/Verkeerssimulatie.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/ttt.dir/src/Voertuig.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/ttt.dir/src/main.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/ttt_debug.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/ttt_debug.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/ttt_debug.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/ttt_debug.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/ttt_debug.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/ttt_debug.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/ttt_debug.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/ttt_debug.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/ttt_debug.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/ttt_debug.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/ttt_debug.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/ttt_debug.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/ttt_debug.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/ttt_debug.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CompilerIdC/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CompilerIdC/a.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CompilerIdCXX/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CompilerIdCXX/a.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gtest/lib/libgtest.a" beforeDir="false" afterPath="$PROJECT_DIR$/gtest/lib/libgtest.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gtest/lib/libgtest_main.a" beforeDir="false" afterPath="$PROJECT_DIR$/gtest/lib/libgtest_main.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Baan.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Baan.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Baan.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Baan.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Verkeerslicht.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Verkeerslicht.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Verkeerslicht.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Verkeerslicht.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Verkeerssimulatie.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Verkeerssimulatie.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Verkeerssimulatie.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Verkeerssimulatie.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Voertuig.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Voertuig.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Voertuig.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Voertuig.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/projectAllTests.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ttt" beforeDir="false" afterPath="$PROJECT_DIR$/ttt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ttt_debug" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/untitled.cbp" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/tests/projectDomainTests.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/DesignByContract.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Parser.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/projectUtils.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/projectExporter.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Parser.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/projectExporter.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/projectImporter.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/projectUtils.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/projectImporter.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/.gitignore" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectId" id="26o4c794iRgRlQ96emNhKlSEnSJ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="cidr.known.project.marker" value="true" />
+    <property name="cmake.loaded.for.project" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../PSE_Verkeerssimulatie" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="ReaderModeSettings">
+    <option name="showRenderedDocs" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="CMake Application.ttt_debug">
+    <configuration name="projectAllTests.DefaultConstructorVerkeersimulatie" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="untitled" TARGET_NAME="ttt_debug" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="untitled" RUN_TARGET_NAME="ttt_debug" TEST_CLASS="projectAllTests" TEST_METHOD="DefaultConstructorVerkeersimulatie" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="projectAllTests.DefaultConstructorVerkeerslicht" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="untitled" TARGET_NAME="ttt_debug" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="untitled" RUN_TARGET_NAME="ttt_debug" TEST_CLASS="projectAllTests" TEST_METHOD="DefaultConstructorVerkeerslicht" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="projectAllTests.IDK" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="untitled" TARGET_NAME="ttt_debug" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="untitled" RUN_TARGET_NAME="ttt_debug" TEST_CLASS="projectAllTests" TEST_METHOD="IDK" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ttt_debug" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="untitled" TARGET_NAME="ttt_debug" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="untitled" RUN_TARGET_NAME="ttt_debug" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ttt" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" WORKING_DIR="file://./src" PASS_PARENT_ENVS_2="true" PROJECT_NAME="untitled" TARGET_NAME="ttt" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="untitled" RUN_TARGET_NAME="ttt">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ttt_debug" type="CMakeRunConfiguration" factoryName="Application" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="untitled" TARGET_NAME="ttt_debug" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="untitled" RUN_TARGET_NAME="ttt_debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="CMake Application.ttt" />
+      <item itemvalue="CMake Application.ttt_debug" />
+      <item itemvalue="Google Test.ttt_debug" />
+      <item itemvalue="Google Test.projectAllTests.IDK" />
+      <item itemvalue="Google Test.projectAllTests.DefaultConstructorVerkeersimulatie" />
+      <item itemvalue="Google Test.projectAllTests.DefaultConstructorVerkeerslicht" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="CMake Application.ttt_debug" />
+        <item itemvalue="Google Test.projectAllTests.DefaultConstructorVerkeersimulatie" />
+        <item itemvalue="Google Test.projectAllTests.DefaultConstructorVerkeerslicht" />
+        <item itemvalue="Google Test.projectAllTests.IDK" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dd021064-0a01-4056-aedc-783ddad215e8" name="Changes" comment="" />
+      <created>1648076681711</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1648076681711</updated>
+      <workItem from="1648076682863" duration="2343000" />
+      <workItem from="1648113842201" duration="15397000" />
+      <workItem from="1650053329991" duration="2155000" />
+      <workItem from="1650573025738" duration="7575000" />
+      <workItem from="1650887683709" duration="6323000" />
+      <workItem from="1651054860013" duration="1000" />
+      <workItem from="1651495321984" duration="13822000" />
+      <workItem from="1651572189882" duration="18705000" />
+      <workItem from="1651658608392" duration="5037000" />
+      <workItem from="1651666326217" duration="13688000" />
+      <workItem from="1651697117364" duration="4760000" />
+      <workItem from="1652567730175" duration="4377000" />
+      <workItem from="1652966378496" duration="1210000" />
+      <workItem from="1653251495474" duration="1255000" />
+      <workItem from="1653318314348" duration="10000" />
+      <workItem from="1655124185864" duration="2498000" />
+      <workItem from="1655293694567" duration="5414000" />
+    </task>
+    <task id="LOCAL-00001" summary="Simulatie werkt">
+      <created>1648079004680</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1648079004680</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Debuggen">
+      <created>1648129695650</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1648129695650</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Project">
+      <created>1648135645935</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1648135645936</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Simulatie werkt" />
+    <MESSAGE value="Debuggen" />
+    <MESSAGE value="Project" />
+    <option name="LAST_COMMIT_MESSAGE" value="Project" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/Verkeerssimulatie.cpp</url>
+          <line>144</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

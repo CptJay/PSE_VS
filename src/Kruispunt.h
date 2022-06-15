@@ -1,0 +1,41 @@
+//
+// Created by chloeacm on 02.05.22.
+//
+
+#ifndef UNTITLED_KRUISPUNT_H
+#define UNTITLED_KRUISPUNT_H
+
+#include "Baan.h"
+#include <map>
+
+
+class Kruispunt {
+private:
+    std::map<Baan*, int> banen;
+    Kruispunt* init;
+public:
+    Kruispunt();
+    /** Controleert de integriteit van de instantie.
+    * Controleert of de selfpointer nog steeds naar zichzelf wijst.
+    *
+    * @return Succeswaarde
+    */
+    bool properlyInitialized() const;
+    /** Setter banen in een zelfgekozen STLcontainer, nl. een map.
+     *
+     * @param b Map bestaande uit een baan en zijn positie.
+     *
+     * REQUIRE(properlyInitialized(), "Kruispunt is niet correct geïnitialiseerd.");
+     */
+    void setBanen(std::map<Baan*, int> b);
+    /** Getter Banen
+     *
+     * @return
+     *
+     * REQUIRE(properlyInitialized(), "Kruispunt is niet correct geïnitialiseerd.");
+     */
+    std::map<Baan*,int> getBanen();
+};
+
+
+#endif //UNTITLED_KRUISPUNT_H
