@@ -21,7 +21,7 @@ const std::string fetch_text(TiXmlNode *pElement, std::ostream& errStream) {
 }
 
 //Below is a static member function but one cannot repeat the static keyword in the implementation
-
+#
 SuccessEnum projectImporter::importVerkeerssimulatie(const char *inputfilename, std::ostream &errStream,
                                                      Verkeerssimulatie &game) {
 
