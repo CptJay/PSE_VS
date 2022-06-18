@@ -12,6 +12,7 @@
 #include "sstream"
 #include "../TinyXML/tinyxml.h"
 #include "iostream"
+#include "DesignByContract.h"
 
 using namespace std;
 

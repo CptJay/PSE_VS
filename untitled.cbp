@@ -213,6 +213,30 @@
 		<Unit filename="C:/Users/User/Informatica/PSE/Verkeerssimulatie/src/main.cpp">
 			<Option target="ttt"/>
 		</Unit>
+		<Unit filename="C:/Users/User/Informatica/PSE/Verkeerssimulatie/src/projectExporter.cpp">
+			<Option target="ttt_debug"/>
+			<Option target="ttt"/>
+		</Unit>
+		<Unit filename="C:/Users/User/Informatica/PSE/Verkeerssimulatie/src/projectExporter.h">
+			<Option target="ttt_debug"/>
+			<Option target="ttt"/>
+		</Unit>
+		<Unit filename="C:/Users/User/Informatica/PSE/Verkeerssimulatie/src/projectImporter.cpp">
+			<Option target="ttt_debug"/>
+			<Option target="ttt"/>
+		</Unit>
+		<Unit filename="C:/Users/User/Informatica/PSE/Verkeerssimulatie/src/projectImporter.h">
+			<Option target="ttt_debug"/>
+			<Option target="ttt"/>
+		</Unit>
+		<Unit filename="C:/Users/User/Informatica/PSE/Verkeerssimulatie/src/projectUtils.cpp">
+			<Option target="ttt_debug"/>
+			<Option target="ttt"/>
+		</Unit>
+		<Unit filename="C:/Users/User/Informatica/PSE/Verkeerssimulatie/src/projectUtils.h">
+			<Option target="ttt_debug"/>
+			<Option target="ttt"/>
+		</Unit>
 		<Unit filename="C:/Users/User/Informatica/PSE/Verkeerssimulatie/src/tests/projectDomainTests.cpp">
 			<Option target="ttt_debug"/>
 		</Unit>

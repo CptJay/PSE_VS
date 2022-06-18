@@ -14,26 +14,38 @@ link_directories(gtest/lib)
 # Set source files for RELEASE target
 set(RELEASE_SOURCE_FILES
         src/main.cpp
+        src/DesignByContract.h
 
         TinyXML/tinyxml.h TinyXML/tinyxml.cpp TinyXML/tinystr.h TinyXML/tinystr.cpp TinyXML/tinyxmlerror.cpp TinyXML/tinyxmlparser.cpp
+
         src/Verkeerssimulatie.cpp src/Verkeerssimulatie.h
         src/Baan.cpp src/Baan.h
         src/Verkeerslicht.cpp src/Verkeerslicht.h
         src/Voertuig.cpp src/Voertuig.h
         src/Parser.h src/Parser.cpp
-        src/DesignByContract.h src/Bushalte.cpp src/Bushalte.h src/Kruispunt.cpp src/Kruispunt.h)
+        src/Bushalte.cpp src/Bushalte.h
+        src/Kruispunt.cpp src/Kruispunt.h
+        src/projectImporter.cpp src/projectImporter.h
+        src/projectExporter.cpp src/projectExporter.h
+        src/projectUtils.cpp src/projectUtils.h)
 
 # Set source files for DEBUG target
 set(DEBUG_SOURCE_FILES
         src/tests/projectTests.cpp src/tests/projectDomainTests.cpp src/tests/projectInputTests.cpp src/tests/projectOutputTests.cpp
+        src/DesignByContract.h
 
         TinyXML/tinyxml.h TinyXML/tinyxml.cpp TinyXML/tinystr.h TinyXML/tinystr.cpp TinyXML/tinyxmlerror.cpp TinyXML/tinyxmlparser.cpp
+
         src/Verkeerssimulatie.cpp src/Verkeerssimulatie.h
         src/Verkeerslicht.cpp src/Verkeerslicht.h
         src/Voertuig.cpp src/Voertuig.h
         src/Baan.h src/Baan.cpp
         src/Parser.h src/Parser.cpp
-        src/DesignByContract.h src/Bushalte.cpp src/Bushalte.h src/Kruispunt.cpp src/Kruispunt.h)
+        src/Bushalte.cpp src/Bushalte.h
+        src/Kruispunt.cpp src/Kruispunt.h
+        src/projectImporter.cpp src/projectImporter.h
+        src/projectExporter.cpp src/projectExporter.h
+        src/projectUtils.cpp src/projectUtils.h)
 
 # Create RELEASE target
 add_executable(ttt ${RELEASE_SOURCE_FILES})

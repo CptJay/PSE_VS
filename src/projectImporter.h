@@ -7,13 +7,19 @@
 
 #include <iostream>
 #include "Verkeerssimulatie.h"
+#include "../TinyXML/tinyxml.h"
 
-enum SuccesEnum {ImporterAborted, PartialImport, Succes};
+enum SuccessEnum {
+    ImportAborted,
+    PartialImport,
+    Succes
+};
 
 class projectImporter {
+private:
+    static int toIntConverter(TiXmlNode* TiNode);
 public:
-
-    static SuccesEnum importVerkeerssimulatie(const char* inputfilename, std::ostream& errStream, Verkeerssimulatie& game);
+    static SuccessEnum importVerkeerssimulatie(const char* inputfilename, std::ostream& errStream, Verkeerssimulatie& game);
 };
 
 

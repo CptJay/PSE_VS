@@ -462,6 +462,87 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ttt.dir\build.make CMakeFiles/ttt.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/projectExporter.obj: src/projectExporter.cpp.obj
+.PHONY : src/projectExporter.obj
+
+# target to build an object file
+src/projectExporter.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ttt_debug.dir\build.make CMakeFiles/ttt_debug.dir/src/projectExporter.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ttt.dir\build.make CMakeFiles/ttt.dir/src/projectExporter.cpp.obj
+.PHONY : src/projectExporter.cpp.obj
+
+src/projectExporter.i: src/projectExporter.cpp.i
+.PHONY : src/projectExporter.i
+
+# target to preprocess a source file
+src/projectExporter.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ttt_debug.dir\build.make CMakeFiles/ttt_debug.dir/src/projectExporter.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ttt.dir\build.make CMakeFiles/ttt.dir/src/projectExporter.cpp.i
+.PHONY : src/projectExporter.cpp.i
+
+src/projectExporter.s: src/projectExporter.cpp.s
+.PHONY : src/projectExporter.s
+
+# target to generate assembly for a file
+src/projectExporter.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ttt_debug.dir\build.make CMakeFiles/ttt_debug.dir/src/projectExporter.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ttt.dir\build.make CMakeFiles/ttt.dir/src/projectExporter.cpp.s
+.PHONY : src/projectExporter.cpp.s
+
+src/projectImporter.obj: src/projectImporter.cpp.obj
+.PHONY : src/projectImporter.obj
+
+# target to build an object file
+src/projectImporter.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ttt_debug.dir\build.make CMakeFiles/ttt_debug.dir/src/projectImporter.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ttt.dir\build.make CMakeFiles/ttt.dir/src/projectImporter.cpp.obj
+.PHONY : src/projectImporter.cpp.obj
+
+src/projectImporter.i: src/projectImporter.cpp.i
+.PHONY : src/projectImporter.i
+
+# target to preprocess a source file
+src/projectImporter.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ttt_debug.dir\build.make CMakeFiles/ttt_debug.dir/src/projectImporter.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ttt.dir\build.make CMakeFiles/ttt.dir/src/projectImporter.cpp.i
+.PHONY : src/projectImporter.cpp.i
+
+src/projectImporter.s: src/projectImporter.cpp.s
+.PHONY : src/projectImporter.s
+
+# target to generate assembly for a file
+src/projectImporter.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ttt_debug.dir\build.make CMakeFiles/ttt_debug.dir/src/projectImporter.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ttt.dir\build.make CMakeFiles/ttt.dir/src/projectImporter.cpp.s
+.PHONY : src/projectImporter.cpp.s
+
+src/projectUtils.obj: src/projectUtils.cpp.obj
+.PHONY : src/projectUtils.obj
+
+# target to build an object file
+src/projectUtils.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ttt_debug.dir\build.make CMakeFiles/ttt_debug.dir/src/projectUtils.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ttt.dir\build.make CMakeFiles/ttt.dir/src/projectUtils.cpp.obj
+.PHONY : src/projectUtils.cpp.obj
+
+src/projectUtils.i: src/projectUtils.cpp.i
+.PHONY : src/projectUtils.i
+
+# target to preprocess a source file
+src/projectUtils.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ttt_debug.dir\build.make CMakeFiles/ttt_debug.dir/src/projectUtils.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ttt.dir\build.make CMakeFiles/ttt.dir/src/projectUtils.cpp.i
+.PHONY : src/projectUtils.cpp.i
+
+src/projectUtils.s: src/projectUtils.cpp.s
+.PHONY : src/projectUtils.s
+
+# target to generate assembly for a file
+src/projectUtils.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ttt_debug.dir\build.make CMakeFiles/ttt_debug.dir/src/projectUtils.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ttt.dir\build.make CMakeFiles/ttt.dir/src/projectUtils.cpp.s
+.PHONY : src/projectUtils.cpp.s
+
 src/tests/projectDomainTests.obj: src/tests/projectDomainTests.cpp.obj
 .PHONY : src/tests/projectDomainTests.obj
 
@@ -604,6 +685,15 @@ help:
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
+	@echo ... src/projectExporter.obj
+	@echo ... src/projectExporter.i
+	@echo ... src/projectExporter.s
+	@echo ... src/projectImporter.obj
+	@echo ... src/projectImporter.i
+	@echo ... src/projectImporter.s
+	@echo ... src/projectUtils.obj
+	@echo ... src/projectUtils.i
+	@echo ... src/projectUtils.s
 	@echo ... src/tests/projectDomainTests.obj
 	@echo ... src/tests/projectDomainTests.i
 	@echo ... src/tests/projectDomainTests.s
