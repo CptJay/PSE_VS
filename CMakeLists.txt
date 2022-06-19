@@ -24,10 +24,7 @@ set(RELEASE_SOURCE_FILES
         src/Voertuig.cpp src/Voertuig.h
         src/Parser.h src/Parser.cpp
         src/Bushalte.cpp src/Bushalte.h
-        src/Kruispunt.cpp src/Kruispunt.h
-        src/projectImporter.cpp src/projectImporter.h
-        src/projectExporter.cpp src/projectExporter.h
-        src/projectUtils.cpp src/projectUtils.h)
+        src/Kruispunt.cpp src/Kruispunt.h)
 
 # Set source files for DEBUG target
 set(DEBUG_SOURCE_FILES

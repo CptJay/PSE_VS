@@ -1,7 +1,3 @@
-//
-// Created by Jay on 15/05/2022.
-//
-
 #include <iostream>
 #include <fstream>
 #include <sys/stat.h>
@@ -13,15 +9,15 @@ using namespace std;
 /**
 Auxiliary functions for file manipulation.
 */
-bool DirectoryExists(const std::string dirname) {
+bool DirectoryExists(const std::string& dirname) {
     struct stat st;
     return stat(dirname.c_str(), &st) == 0;
 }
 
-bool FileExists(const std::string filename) {
+bool FileExists(const std::string& filename) {
     struct stat st;
     if (stat(filename.c_str(), &st) != 0) return false;
-    ifstream f(filename);
+    ifstream f(filename.c_str());
     if (f.good()) {
         f.close();
         return true;
@@ -31,23 +27,23 @@ bool FileExists(const std::string filename) {
     }
 }
 
-bool FileIsEmpty(const std::string filename) {
+bool FileIsEmpty(const std::string& filename) {
     struct stat st;
     if (stat(filename.c_str(), &st) != 0) return true; // File does not exist; thus it is empty
     return st.st_size == 0;
 }
 
-bool FileCompare(const std::string leftFileName, const std::string rightFileName) {
+bool FileCompare(const std::string& leftFileName, const std::string& rightFileName) {
     ifstream leftFile, rightFile;
     char leftRead, rightRead;
     bool result;
 
     // Open the two files.
-    leftFile.open(leftFileName);
+    leftFile.open(leftFileName.c_str());
     if (!leftFile.is_open()) {
         return false;
     };
-    rightFile.open(rightFileName);
+    rightFile.open(rightFileName.c_str());
     if (!rightFile.is_open()) {
         leftFile.close();
         return false;

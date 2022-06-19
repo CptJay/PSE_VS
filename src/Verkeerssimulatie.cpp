@@ -5,6 +5,7 @@
  */
 
 #include "Verkeerssimulatie.h"
+#include "DesignByContract.h"
 #include "../TinyXML/tinyxml.h"
 #include <sstream>
 #include <iostream>

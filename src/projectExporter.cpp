@@ -7,7 +7,7 @@
 
 using namespace std;
 
-bool projectExporter::projectExporter() {
+projectExporter::projectExporter() {
     _initCheck = this;
     _documentStarted = false;
     ENSURE(properlyInitialized(), "Constructor must end in properlyInitialized state");
