@@ -99,8 +99,8 @@ SuccessEnum projectImporter::importVerkeerssimulatie(const char *inputfilename, 
                 int positie;
                 int cyclus;
 
-                sscanf(positieString.c_str(), "%d", positie);
-                sscanf(cyclusString.c_str(), "%d", cyclus);
+                sscanf(positieString.c_str(), "%d", &positie);
+                sscanf(cyclusString.c_str(), "%d", &cyclus);
 
                 if (positie < 0) {
                     errStream
@@ -135,7 +135,7 @@ SuccessEnum projectImporter::importVerkeerssimulatie(const char *inputfilename, 
 
                 int positie;
 
-                sscanf(positieString.c_str(), "%d", positie);
+                sscanf(positieString.c_str(), "%d", &positie);
 
                 if (positie < 0) {
                     errStream
@@ -199,8 +199,8 @@ SuccessEnum projectImporter::importVerkeerssimulatie(const char *inputfilename, 
                 int positie;
                 int wachttijd;
 
-                sscanf(positieString.c_str(), "%d", positie);
-                sscanf(wachttijdString.c_str(), "%d", wachttijd);
+                sscanf(positieString.c_str(), "%d", &positie);
+                sscanf(wachttijdString.c_str(), "%d", &wachttijd);
 
                 if (positie < 0) {
                     errStream
@@ -243,10 +243,10 @@ SuccessEnum projectImporter::importVerkeerssimulatie(const char *inputfilename, 
         }
 
         //banen moeten gelinkt worden met voertuigen - verkeerslichten - bushalten
-        for (int i = 0; i < banen.size(); i++){
+        for (long unsigned int i = 0; i < banen.size(); i++){
             // verkeerslichten
             string baanNaam = banen[i]->getNaam();
-            for (int j = 0; j < verkeerslichten.size(); j++){
+            for (long unsigned int j = 0; j < verkeerslichten.size(); j++){
                 if (verkeerslichten.find(baanNaam) != verkeerslichten.end()){
                     verkeerslichten[baanNaam]->setBaan(banen[i]);
                 } else {
@@ -255,9 +255,9 @@ SuccessEnum projectImporter::importVerkeerssimulatie(const char *inputfilename, 
             }
 
             // bushalten
-            for (int j = 0; j < bushalten.size(); j++){
+            for (long unsigned int j = 0; j < bushalten.size(); j++){
                 if (bushalten.find(baanNaam) != bushalten.end()){
-                    for (int u = 0; u < bushalten[baanNaam].size(); u++){
+                    for (long unsigned int u = 0; u < bushalten[baanNaam].size(); u++){
                         bushalten[baanNaam][u]->setBaan(banen[i]);
                     }
                 } else {
@@ -266,9 +266,9 @@ SuccessEnum projectImporter::importVerkeerssimulatie(const char *inputfilename, 
             }
 
             // voertuigen
-            for (int j = 0; j < voertuigen.size(); j++){
+            for (long unsigned int j = 0; j < voertuigen.size(); j++){
                 if (voertuigen.find(baanNaam) != voertuigen.end()){
-                    for (int u = 0; u < voertuigen[baanNaam].size(); u++){
+                    for (long unsigned int u = 0; u < voertuigen[baanNaam].size(); u++){
                         voertuigen[baanNaam][u]->setBaan(banen[i]);
                     }
                 } else{

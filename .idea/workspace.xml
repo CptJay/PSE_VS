@@ -11,14 +11,24 @@
   </component>
   <component name="CMakeSettings" AUTO_RELOAD="true">
     <configurations>
-      <configuration PROFILE_NAME="Debug" ENABLED="true" GENERATION_DIR="$PROJECT_DIR$/../PSE_Verkeerssimulatie" CONFIG_NAME="Debug" />
+      <configuration PROFILE_NAME="Debug" ENABLED="true" GENERATION_DIR="$PROJECT_DIR$" CONFIG_NAME="Debug" />
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd021064-0a01-4056-aedc-783ddad215e8" name="Changes" comment="projectImporter.cpp">
+    <list default="true" id="dd021064-0a01-4056-aedc-783ddad215e8" name="Changes" comment="In progress">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeCache.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake_install.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/projectExporter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/projectExporter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/projectExporter.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/projectExporter.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/projectImporter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/projectImporter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projectImporter.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/projectImporter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/testInput/test.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/projectDomainTests.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/projectDomainTests.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/projectInputTests.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/projectInputTests.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/projectTests.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/projectTests.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ttt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled.cbp" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,53 +77,61 @@
     <property name="cf.first.check.clang-format" value="false" />
     <property name="cidr.known.project.marker" value="true" />
     <property name="cmake.loaded.for.project" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../PSE_Verkeerssimulatie" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="CMakeSettings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Informatica\PSE\Verkeerssimulatie\src\testInput" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
   <component name="RunManager" selected="CMake Application.ttt_debug">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="projectAllTests.DefaultConstructorVerkeersimulatie" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="untitled" TARGET_NAME="ttt_debug" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="untitled" RUN_TARGET_NAME="ttt_debug" TEST_CLASS="projectAllTests" TEST_METHOD="DefaultConstructorVerkeersimulatie" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="projectAllTests.DefaultConstructorVerkeerslicht" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="untitled" TARGET_NAME="ttt_debug" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="untitled" RUN_TARGET_NAME="ttt_debug" TEST_CLASS="projectAllTests" TEST_METHOD="DefaultConstructorVerkeerslicht" TEST_MODE="SUITE_TEST">
+    <configuration name="projectDomainTests.Bushalte" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="untitled" TARGET_NAME="ttt_debug" RUN_TARGET_PROJECT_NAME="untitled" RUN_TARGET_NAME="ttt_debug" TEST_CLASS="projectDomainTests" TEST_METHOD="Bushalte" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="projectAllTests.IDK" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="untitled" TARGET_NAME="ttt_debug" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="untitled" RUN_TARGET_NAME="ttt_debug" TEST_CLASS="projectAllTests" TEST_METHOD="IDK" TEST_MODE="SUITE_TEST">
+    <configuration name="projectDomainTests.DefaultConstructorBaan" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="untitled" TARGET_NAME="ttt_debug" RUN_TARGET_PROJECT_NAME="untitled" RUN_TARGET_NAME="ttt_debug" TEST_CLASS="projectDomainTests" TEST_METHOD="DefaultConstructorBaan" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ttt_debug" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="untitled" TARGET_NAME="ttt_debug" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="untitled" RUN_TARGET_NAME="ttt_debug" TEST_MODE="SUITE_TEST">
+    <configuration name="projectDomainTests.DefaultConstructorVerkeersimulatie" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="untitled" TARGET_NAME="ttt_debug" RUN_TARGET_PROJECT_NAME="untitled" RUN_TARGET_NAME="ttt_debug" TEST_CLASS="projectDomainTests" TEST_METHOD="DefaultConstructorVerkeersimulatie" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+    <configuration name="ttt_debug" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" PROGRAM_PARAMS="../" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="untitled" TARGET_NAME="ttt_debug" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="untitled" RUN_TARGET_NAME="ttt_debug" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ttt" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" WORKING_DIR="file://src/testInput/" PASS_PARENT_ENVS_2="true" PROJECT_NAME="untitled" TARGET_NAME="ttt" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="untitled" RUN_TARGET_NAME="ttt">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ttt" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" WORKING_DIR="file://./src" PASS_PARENT_ENVS_2="true" PROJECT_NAME="untitled" TARGET_NAME="ttt" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="untitled" RUN_TARGET_NAME="ttt">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ttt_debug" type="CMakeRunConfiguration" factoryName="Application" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="untitled" TARGET_NAME="ttt_debug" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="untitled" RUN_TARGET_NAME="ttt_debug">
+    <configuration name="ttt_debug" type="CMakeRunConfiguration" factoryName="Application" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" WORKING_DIR="file://src/tests/" PASS_PARENT_ENVS_2="true" PROJECT_NAME="untitled" TARGET_NAME="ttt_debug" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="untitled" RUN_TARGET_NAME="ttt_debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -127,16 +145,18 @@
       <item itemvalue="CMake Application.ttt" />
       <item itemvalue="CMake Application.ttt_debug" />
       <item itemvalue="Google Test.ttt_debug" />
-      <item itemvalue="Google Test.projectAllTests.IDK" />
       <item itemvalue="Google Test.projectAllTests.DefaultConstructorVerkeersimulatie" />
-      <item itemvalue="Google Test.projectAllTests.DefaultConstructorVerkeerslicht" />
+      <item itemvalue="Google Test.projectDomainTests.DefaultConstructorBaan" />
+      <item itemvalue="Google Test.projectDomainTests.DefaultConstructorVerkeersimulatie" />
+      <item itemvalue="Google Test.projectDomainTests.Bushalte" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="CMake Application.ttt_debug" />
+        <item itemvalue="Google Test.projectDomainTests.Bushalte" />
+        <item itemvalue="Google Test.projectDomainTests.DefaultConstructorVerkeersimulatie" />
+        <item itemvalue="Google Test.projectDomainTests.DefaultConstructorBaan" />
         <item itemvalue="Google Test.projectAllTests.DefaultConstructorVerkeersimulatie" />
-        <item itemvalue="Google Test.projectAllTests.DefaultConstructorVerkeerslicht" />
-        <item itemvalue="Google Test.projectAllTests.IDK" />
       </list>
     </recent_temporary>
   </component>
@@ -172,7 +192,8 @@
       <workItem from="1655380019669" duration="2972000" />
       <workItem from="1655566653541" duration="1789000" />
       <workItem from="1655570629132" duration="7683000" />
-      <workItem from="1655595223509" duration="2623000" />
+      <workItem from="1655595223509" duration="5505000" />
+      <workItem from="1655600795377" duration="2466000" />
     </task>
     <task id="LOCAL-00001" summary="Simulatie werkt">
       <created>1648079004680</created>
@@ -209,7 +230,21 @@
       <option name="project" value="LOCAL" />
       <updated>1655578599530</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="projectImporter.cpp af denk ik">
+      <created>1655598093532</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1655598093532</updated>
+    </task>
+    <task id="LOCAL-00007" summary="In progress">
+      <created>1655600236749</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1655600236749</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -232,14 +267,16 @@
     <MESSAGE value="Debuggen" />
     <MESSAGE value="Project" />
     <MESSAGE value="projectImporter.cpp" />
-    <option name="LAST_COMMIT_MESSAGE" value="projectImporter.cpp" />
+    <MESSAGE value="projectImporter.cpp af denk ik" />
+    <MESSAGE value="In progress" />
+    <option name="LAST_COMMIT_MESSAGE" value="In progress" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/src/Verkeerssimulatie.cpp</url>
-          <line>144</line>
+          <line>145</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>

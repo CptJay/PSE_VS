@@ -26,14 +26,14 @@ protected:
     Verkeerssimulatie verkeerssimulatie;
 };
 
-TEST_F(projectInputTests, InputHappyDay){
-    ASSERT_TRUE(DirectoryExists("../testInput"));
-
-    ofstream myfile;
-
-    myfile.open("../testInput/zzzInput.xml");
-    myfile << "<?xml version =\"1.0\" ?>" << endl
-        << "<Verkeersimulatie>" << endl;
-
-
-}
+//TEST_F(projectInputTests, InputHappyDay){
+//    ASSERT_TRUE(DirectoryExists("../testInput"));
+//
+//    ofstream myfile;
+//
+//    myfile.open("../testInput/zzzInput.xml");
+//    myfile << "<?xml version =\"1.0\" ?>" << endl
+//        << "<Verkeersimulatie>" << endl;
+//
+//
+//}

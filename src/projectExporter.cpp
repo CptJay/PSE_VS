@@ -14,7 +14,7 @@ projectExporter::projectExporter() {
 }
 
 bool projectExporter::properlyInitialized() {
-    _initCheck == this;
+    return _initCheck == this;
 }
 
 bool projectExporter::documentStarted() {

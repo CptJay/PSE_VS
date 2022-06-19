@@ -7,12 +7,11 @@
 #include <fstream>
 #include <sys/stat.h>
 #include <gtest/gtest.h>
-
-using namespace std;
-
 #include "../Verkeerssimulatie.h"
 #include "../Baan.h"
 #include "../Kruispunt.h"
+using namespace std;
+
 
 class projectDomainTests : public ::testing::Test{
 protected:
@@ -352,7 +351,6 @@ bus->setSnelheid(10);
 bus->setVersnelling(2);
 bus->setType("bus");
 bushalte->bushalteSimulatie(1);
-std::cout << bus->getVersnelling() << std::endl;
 EXPECT_TRUE(bus->isAanBushalte());
 EXPECT_TRUE(bus->getVersnelling() < 0);
 bushalte->bushalteSimulatie(1);
@@ -362,3 +360,4 @@ delete baan1;
 delete bus;
 delete bushalte;
 }
+
