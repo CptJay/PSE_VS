@@ -46,9 +46,12 @@ SuccessEnum projectImporter::importVerkeerssimulatie(const char *inputfilename, 
         endResult = PartialImport;
     } else {
 
+        int ID = 0;
         vector<Baan *> banen;
-        map<string, vector<Verkeerslicht*> > verkeerslichten;
-        bool Cleanup = false;
+        map<string, Verkeerslicht*> verkeerslichten;
+        map<string, vector<Bushalte *> > bushalten;
+        map<string, vector<Voertuig *> > voertuigen;
+//        bool Cleanup = false;
 
         for (TiXmlNode *node = root->FirstChild(); node != NULL; node = node->NextSibling()) {
             if (strcmp(node->Value(), "BAAN") == 0) {
@@ -78,12 +81,14 @@ SuccessEnum projectImporter::importVerkeerssimulatie(const char *inputfilename, 
                 baan->setNaam(naamString);
                 banen.push_back(baan);
             } else if (strcmp(node->Value(), "VERKEERSLICHT") == 0) {
-                TiXmlNode* baanNode = node->FirstChild("baan");
-                TiXmlNode* positieNode = node->FirstChild("positie");
-                TiXmlNode* cyclusNode = node->FirstChild("cyclus");
+                TiXmlNode *baanNode = node->FirstChild("baan");
+                TiXmlNode *positieNode = node->FirstChild("positie");
+                TiXmlNode *cyclusNode = node->FirstChild("cyclus");
 
-                if (baanNode == NULL || positieNode == NULL || cyclusNode == NULL){
-                    errStream << "[Ongeldige informatie] Onvolledige verkeerslicht ingelezen. Verkeerslicht wordt genegeerd." << endl;
+                if (baanNode == NULL || positieNode == NULL || cyclusNode == NULL) {
+                    errStream
+                            << "[Ongeldige informatie] Onvolledige verkeerslicht ingelezen. Verkeerslicht wordt genegeerd."
+                            << endl;
                     continue;
                 }
 
@@ -97,27 +102,30 @@ SuccessEnum projectImporter::importVerkeerssimulatie(const char *inputfilename, 
                 sscanf(positieString.c_str(), "%d", positie);
                 sscanf(cyclusString.c_str(), "%d", cyclus);
 
-                if (positie < 0){
-                    errStream << "[Ongeldige informatie] Positie van verkeerslicht kan niet negatief zijn. Verkeerslicht wordt genegeerd."
-                              << endl;
+                if (positie < 0) {
+                    errStream
+                            << "[Ongeldige informatie] Positie van verkeerslicht kan niet negatief zijn. Verkeerslicht wordt genegeerd."
+                            << endl;
                     continue;
                 }
-                if (cyclus < 0){
-                    errStream << "[Ongeldige informatie] Cyclus van verkeerslicht kan niet negatief zijn. Verkeerslicht wordt genegeerd."
-                              << endl;
+                if (cyclus < 0) {
+                    errStream
+                            << "[Ongeldige informatie] Cyclus van verkeerslicht kan niet negatief zijn. Verkeerslicht wordt genegeerd."
+                            << endl;
                     continue;
                 }
-                Verkeerslicht* vl = new Verkeerslicht;
+                Verkeerslicht *vl = new Verkeerslicht;
                 vl->setPositie(positie);
                 vl->setCycles(cyclus);
-                verkeerslichten[baanString].push_back(vl);
-            } else if (strcmp(node->Value(), "VOERTUIG") == 0){
-                TiXmlNode* baanNode = node->FirstChild("baan");
-                TiXmlNode* positieNode = node->FirstChild("positie");
-                TiXmlNode* typeNode = node->FirstChild("node");
+                verkeerslichten[baanString] = vl;
+            } else if (strcmp(node->Value(), "VOERTUIG") == 0) {
+                TiXmlNode *baanNode = node->FirstChild("baan");
+                TiXmlNode *positieNode = node->FirstChild("positie");
+                TiXmlNode *typeNode = node->FirstChild("node");
 
-                if (baanNode == NULL || positieNode == NULL || typeNode == NULL){
-                    errStream << "[Ongeldige informatie] Onvolledige voertuig ingelezen. Voertuig wordt genegeerd." << endl;
+                if (baanNode == NULL || positieNode == NULL || typeNode == NULL) {
+                    errStream << "[Ongeldige informatie] Onvolledige voertuig ingelezen. Voertuig wordt genegeerd."
+                              << endl;
                     continue;
                 }
 
@@ -129,45 +137,149 @@ SuccessEnum projectImporter::importVerkeerssimulatie(const char *inputfilename, 
 
                 sscanf(positieString.c_str(), "%d", positie);
 
-                if (positie < 0){
-                    errStream << "[Ongeldige informatie] Positie van voertuig kan niet negatief zijn. Voertuig wordt genegeerd."
+                if (positie < 0) {
+                    errStream
+                            << "[Ongeldige informatie] Positie van voertuig kan niet negatief zijn. Voertuig wordt genegeerd."
+                            << endl;
+                    continue;
+                }
+                if (typeString != "auto" || typeString != "bus" || typeString != "brandweerwagen" ||
+                    typeString != "ziekenwagen" || typeString != "politiecombi") {
+                    errStream
+                            << "[Ongeldige informatie] Type van voertuig wordt niet ondersteund. Voertuig wordt genegeerd."
+                            << endl;
+                    continue;
+                }
+                if (typeString == "auto") {
+                    Auto *anAuto = new Auto;
+                    anAuto->setPositie(positie);
+                    anAuto->setType(typeString);
+                    anAuto->setId(ID += 1);
+                    voertuigen[baanString].push_back(anAuto);
+                } else if (typeString == "bus") {
+                    Bus *bus = new Bus;
+                    bus->setPositie(positie);
+                    bus->setType(typeString);
+                    bus->setId(ID += 1);
+                    voertuigen[baanString].push_back(bus);
+                } else if (typeString == "brandweerwagen") {
+                    Brandweerwagen *brandweerwagen = new Brandweerwagen;
+                    brandweerwagen->setPositie(positie);
+                    brandweerwagen->setType(typeString);
+                    brandweerwagen->setId(ID += 1);
+                    voertuigen[baanString].push_back(brandweerwagen);
+                } else if (typeString == "ziekenwagen") {
+                    Ziekenwagen *ziekenwagen = new Ziekenwagen;
+                    ziekenwagen->setPositie(positie);
+                    ziekenwagen->setType(typeString);
+                    ziekenwagen->setId(ID += 1);
+                    voertuigen[baanString].push_back(ziekenwagen);
+                } else if (typeString == "politiecombi") {
+                    Politiecombi *politiecombi = new Politiecombi;
+                    politiecombi->setPositie(positie);
+                    politiecombi->setType(typeString);
+                    politiecombi->setId(ID += 1);
+                    voertuigen[baanString].push_back(politiecombi);
+                }
+            } else if (strcmp(node->Value(), "BUSHALTE") == 0) {
+                TiXmlNode *baanNode = node->FirstChild("baan");
+                TiXmlNode *positieNode = node->FirstChild("positie");
+                TiXmlNode *wachttijdNode = node->FirstChild("wachttijd");
+
+                if (baanNode == NULL || positieNode == NULL || wachttijdNode == NULL) {
+                    errStream << "[Ongeldige informatie] Onvolledige bushalte ingelezen. Bushalte wordt genegeerd."
                               << endl;
                     continue;
                 }
-                if (typeString != "auto" || typeString != "bus" || typeString != "brandweerwagen" || typeString != "ziekenwagen" || typeString != "politiecombi"){
-                    errStream << "[Ongeldige informatie] Type van voertuig wordt niet ondersteund. Voertuig wordt genegeerd."
-                              << endl;
+
+                string baanString = baanNode->FirstChild()->ToText()->Value();
+                string positieString = positieNode->FirstChild()->ToText()->Value();
+                string wachttijdString = wachttijdNode->FirstChild()->ToText()->Value();
+
+                int positie;
+                int wachttijd;
+
+                sscanf(positieString.c_str(), "%d", positie);
+                sscanf(wachttijdString.c_str(), "%d", wachttijd);
+
+                if (positie < 0) {
+                    errStream
+                            << "[Ongeldige informatie] Positie van bushalte kan niet negatief zijn. Bushalte wordt genegeerd."
+                            << endl;
                     continue;
                 }
-                if (typeString == "auto"){
-                    Auto* anAuto = new Auto;
-                } else if (typeString == "bus"){
-                    Bus* bus = new Bus;
-                } else if (typeString == "brandweerwagen"){
-                    Brandweerwagen* brandweerwagen = new Brandweerwagen;
-                } else if (typeString == "ziekenwagen"){
-                    Ziekenwagen* ziekenwagen = new Ziekenwagen;
-                } else if (typeString == "politiecombi"){
-                    Politiecombi* politiecombi = new Politiecombi;
-                } //moet nog inorde gebracht worden
-            } else if (strcmp(node->Value(), "BUSHALTE") == 0){
+                if (wachttijd < 0) {
+                    errStream
+                            << "[Ongeldige informatie] Wachttijd van bushalte kan niet negatief zijn. Bushalte wordt genegeerd."
+                            << endl;
+                    continue;
+                }
+                Bushalte *bushalte = new Bushalte;
+                bushalte->setPositie(positie);
+                bushalte->setWachttijd(wachttijd);
+                bushalten[baanString].push_back(bushalte);
 
-            } else if (strcmp(node->Value(), "KRUISPUNT") == 0){
-
+            } else if (strcmp(node->Value(), "KRUISPUNT") == 0) {
+                continue;
             } else {
-
+                errStream << "[Onehrkenbaar element] Element " << node->Value() <<" wordt niet herkend. Element wordt genegeerd." << endl;
+                continue;
             }
         }
-    }
+        if (banen.empty()){
+            errStream << "XML PARTIAL IMPORT [Inconsistente verkeerssimulatie] Er zijn geen banen ingelezen." << endl;
+            endResult = PartialImport;
+            //cleanup = true;
+        }
+        if (voertuigen.empty()){
+            errStream << "XML PARTIAL IMPORT [Inconsistente verkeerssimulatie] Er zijn geen voertuigen ingelezen." << endl;
+            endResult = PartialImport;
+            //cleanup = true;
+        }
+        if (verkeerslichten.empty()){
+            errStream << "XML PARTIAL IMPORT [Inconsistente verkeerssimulatie] Er zijn geen verkeerslichten ingelezen." << endl;
+            endResult = PartialImport;
+            //cleanup = true;
+        }
 
+        //banen moeten gelinkt worden met voertuigen - verkeerslichten - bushalten
+        for (int i = 0; i < banen.size(); i++){
+            // verkeerslichten
+            string baanNaam = banen[i]->getNaam();
+            for (int j = 0; j < verkeerslichten.size(); j++){
+                if (verkeerslichten.find(baanNaam) != verkeerslichten.end()){
+                    verkeerslichten[baanNaam]->setBaan(banen[i]);
+                } else {
+                    // verkeerslicht niet gevonden
+                }
+            }
+
+            // bushalten
+            for (int j = 0; j < bushalten.size(); j++){
+                if (bushalten.find(baanNaam) != bushalten.end()){
+                    for (int u = 0; u < bushalten[baanNaam].size(); u++){
+                        bushalten[baanNaam][u]->setBaan(banen[i]);
+                    }
+                } else {
+                    //bushalte niet gevonden
+                }
+            }
+
+            // voertuigen
+            for (int j = 0; j < voertuigen.size(); j++){
+                if (voertuigen.find(baanNaam) != voertuigen.end()){
+                    for (int u = 0; u < voertuigen[baanNaam].size(); u++){
+                        voertuigen[baanNaam][u]->setBaan(banen[i]);
+                    }
+                } else{
+                    //voertuig niet gevonden
+                }
+            }
+        }
+
+        game.setBanen(banen);
+    }
 
     doc.Clear();
     return endResult;
-}
-
-int projectImporter::toIntConverter(TiXmlNode* TiNode) {
-    string y = TiNode->FirstChild()->ToText()->Value();
-    int x;
-    sscanf(y.c_str(), "%d", x);
-    return x;
 }

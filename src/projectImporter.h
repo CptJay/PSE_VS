@@ -16,8 +16,6 @@ enum SuccessEnum {
 };
 
 class projectImporter {
-private:
-    static int toIntConverter(TiXmlNode* TiNode);
 public:
     static SuccessEnum importVerkeerssimulatie(const char* inputfilename, std::ostream& errStream, Verkeerssimulatie& game);
 };
