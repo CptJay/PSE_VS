@@ -11,6 +11,7 @@
 Baan::Baan() {
     lengte = 0;
     init = this;
+    vg = NULL;
     ENSURE(properlyInitialized(), "Baan is niet correct geïnitialiseerd.");
 }
 
@@ -103,3 +104,10 @@ std::vector<Kruispunt*> Baan::getKruispunten() {
     return kruispunten;
 }
 
+void Baan::setVoertuiggenerator(Voertuiggenerator *g) {
+    vg = g;
+}
+
+Voertuiggenerator* Baan::getVoertuiggenerator() {
+    return vg;
+}

@@ -13,6 +13,7 @@
 #include "../TinyXML/tinyxml.h"
 #include "iostream"
 #include "DesignByContract.h"
+#include "Voertuiggenerator.h"
 
 using namespace std;
 
@@ -40,6 +41,7 @@ void Parser::XML(const char *filename) {
         string vt = "VOERTUIG";
         string bh = "BUSHALTE";
         string k = "KRUISPUNT";
+        string vg = "VOERTUIGGENERATOR";
         if (elem->Value() == b) {
             Baan *baan = new Baan;
             for (TiXmlElement *elemBaan = elem->FirstChildElement();
@@ -149,6 +151,21 @@ void Parser::XML(const char *filename) {
             kruispunt->setPosities(tempPosities);
             tempBanen.first->addKruispunt(kruispunt);
             tempBanen.second->addKruispunt(kruispunt);
+        }
+        else if (elem->Value() == vg) {
+            Voertuiggenerator* g = new Voertuiggenerator;
+            for (TiXmlElement* elemVG = elem->FirstChildElement(); elemVG != NULL; elemVG = elemVG->NextSiblingElement()) {
+                string elemName = elemVG->Value();
+                if (elemName == "baan") {
+                    Baan* juisteBaan = findBaan(elemVG->GetText());
+                    g->setBaan(juisteBaan);
+                    juisteBaan->setVoertuiggenerator(g);
+                }
+                else if (elemName == "frequentie") {
+                    g->setFrequentie(stringToInt(elemVG->GetText()));
+                }
+            }
+
         }
     }
     for (unsigned int i = 0; i < banen.size(); i++) { //moet dit wel hier? moeten we niet sorteren na elke simulatiestap?

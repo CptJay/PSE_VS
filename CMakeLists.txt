@@ -42,7 +42,7 @@ set(DEBUG_SOURCE_FILES
         src/Kruispunt.cpp src/Kruispunt.h
         src/projectImporter.cpp src/projectImporter.h
         src/projectExporter.cpp src/projectExporter.h
-        src/projectUtils.cpp src/projectUtils.h)
+        src/projectUtils.cpp src/projectUtils.h src/Voertuiggenerator.cpp src/Voertuiggenerator.h)
 
 # Create RELEASE target
 add_executable(ttt ${RELEASE_SOURCE_FILES})

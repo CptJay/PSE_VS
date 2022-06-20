@@ -15,6 +15,7 @@
 #include "Verkeerslicht.h"
 #include "Bushalte.h"
 #include "Kruispunt.h"
+#include "Voertuiggenerator.h"
 
 class Voertuig;
 
@@ -31,6 +32,7 @@ private:
     std::vector<Verkeerslicht*> verkeerslichten;
     std::vector<Bushalte*> bushaltes;
     std::vector<Kruispunt*> kruispunten;
+    Voertuiggenerator* vg;
 public:
     /** Default constructor.
      * Baan wordt aangemaakt.
@@ -90,7 +92,9 @@ public:
     std::vector<Bushalte*> getBushaltes();
     Voertuig* getEersteVoertuig(int p);
     void addKruispunt(Kruispunt* kp);
-    stdstd::vector<Kruispunt*> getKruispunten();
+    std::vector<Kruispunt*> getKruispunten();
+    void setVoertuiggenerator(Voertuiggenerator* g);
+    Voertuiggenerator* getVoertuiggenerator();
 };
 
 
