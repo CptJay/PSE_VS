@@ -15,13 +15,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd021064-0a01-4056-aedc-783ddad215e8" name="Changes" comment="Meer Inputtesten">
-      <change afterPath="$PROJECT_DIR$/src/testInput/LegalInfo1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/testInput/LegalInfo2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/testInput/LegalInfo3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/testInput/LegalInfo4.xml" afterDir="false" />
+    <list default="true" id="dd021064-0a01-4056-aedc-783ddad215e8" name="Changes" comment="Inputtest volledig afgewerkt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/projectInputTests.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/projectInputTests.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/projectOutputTests.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/projectOutputTests.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,13 +81,7 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
-  <component name="RunManager" selected="CMake Application.ttt_debug">
-    <configuration name="projectDomainTests.Bushalte" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="untitled" TARGET_NAME="ttt_debug" RUN_TARGET_PROJECT_NAME="untitled" RUN_TARGET_NAME="ttt_debug" TEST_CLASS="projectDomainTests" TEST_METHOD="Bushalte" TEST_MODE="SUITE_TEST">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-        <option name="BeforeTestRunTask" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Google Test.projectOutputTests.UtilIntegrityTest">
     <configuration name="projectInputTests" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="untitled" TARGET_NAME="ttt_debug" RUN_TARGET_PROJECT_NAME="untitled" RUN_TARGET_NAME="ttt_debug" TEST_CLASS="projectInputTests" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -105,6 +95,12 @@
       </method>
     </configuration>
     <configuration name="projectInputTests.XMLSyntaxError" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="untitled" TARGET_NAME="ttt_debug" RUN_TARGET_PROJECT_NAME="untitled" RUN_TARGET_NAME="ttt_debug" TEST_CLASS="projectInputTests" TEST_METHOD="XMLSyntaxError" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="projectOutputTests.UtilIntegrityTest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="untitled" TARGET_NAME="ttt_debug" RUN_TARGET_PROJECT_NAME="untitled" RUN_TARGET_NAME="ttt_debug" TEST_CLASS="projectOutputTests" TEST_METHOD="UtilIntegrityTest" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
@@ -135,18 +131,18 @@
       <item itemvalue="CMake Application.ttt" />
       <item itemvalue="CMake Application.ttt_debug" />
       <item itemvalue="Google Test.ttt_debug" />
-      <item itemvalue="Google Test.projectDomainTests.Bushalte" />
       <item itemvalue="Google Test.projectInputTests.InputHappyDay" />
       <item itemvalue="Google Test.projectInputTests" />
       <item itemvalue="Google Test.projectInputTests.XMLSyntaxError" />
+      <item itemvalue="Google Test.projectOutputTests.UtilIntegrityTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Google Test.projectOutputTests.UtilIntegrityTest" />
         <item itemvalue="CMake Application.ttt_debug" />
         <item itemvalue="Google Test.projectInputTests.XMLSyntaxError" />
         <item itemvalue="Google Test.projectInputTests.InputHappyDay" />
         <item itemvalue="Google Test.projectInputTests" />
-        <item itemvalue="Google Test.projectDomainTests.Bushalte" />
       </list>
     </recent_temporary>
   </component>
@@ -185,7 +181,7 @@
       <workItem from="1655595223509" duration="5505000" />
       <workItem from="1655600795377" duration="3355000" />
       <workItem from="1655647140806" duration="4355000" />
-      <workItem from="1655709311613" duration="20343000" />
+      <workItem from="1655709311613" duration="22740000" />
     </task>
     <task id="LOCAL-00001" summary="Simulatie werkt">
       <created>1648079004680</created>
@@ -271,7 +267,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655729588043</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Inputtest volledig afgewerkt">
+      <created>1655731032038</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1655731032038</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -300,7 +303,8 @@
     <MESSAGE value="Bezig met inputTesten" />
     <MESSAGE value="inputTest werkt, nog extra testen erin zetten en gucci" />
     <MESSAGE value="Meer Inputtesten" />
-    <option name="LAST_COMMIT_MESSAGE" value="Meer Inputtesten" />
+    <MESSAGE value="Inputtest volledig afgewerkt" />
+    <option name="LAST_COMMIT_MESSAGE" value="Inputtest volledig afgewerkt" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
