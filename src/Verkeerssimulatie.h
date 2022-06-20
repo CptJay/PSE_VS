@@ -15,6 +15,7 @@
 #include "Voertuig.h"
 #include "Bushalte.h"
 #include "Kruispunt.h"
+#include "Voertuiggenerator.h"
 
 class Baan;
 
@@ -23,6 +24,8 @@ class Verkeerslicht;
 class Voertuig;
 
 class Bushalte;
+
+class Voertuiggenerator;
 
 class Verkeerssimulatie {
 private:

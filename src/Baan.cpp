@@ -11,7 +11,6 @@
 Baan::Baan() {
     lengte = 0;
     init = this;
-    vg = NULL;
     ENSURE(properlyInitialized(), "Baan is niet correct geïnitialiseerd.");
 }
 

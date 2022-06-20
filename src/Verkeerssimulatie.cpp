@@ -100,8 +100,11 @@ void Verkeerssimulatie::automatischeSimulatie() {
             for (unsigned int l=0; l<bh.size(); l++) {
                 bh[l]->bushalteSimulatie(simulatietijd);
             }
+            std::vector<Kruispunt*> kp = banen[i]->getKruispunten();
+            for (unsigned int p=0; p<kp.size(); p++) {
+                kp[p]->kruispuntSimulatie(banen[i]);
+            }
             std::vector<Voertuiggenerator*> g = banen[i]->getGenerators();
-            int l = 0;
             for (unsigned int n=0; n<g.size(); n++) {
                 Voertuig* nieuwVoertuig = g[n]->generateVoertuig(simulatietijd);
                 if (nieuwVoertuig != NULL) {
@@ -192,7 +195,6 @@ void Verkeerssimulatie::exportSimulatie() {
             kp[m]->kruispuntSimulatie(banen[i]);
         }
         std::vector<Voertuiggenerator*> g = banen[i]->getGenerators();
-        int l = 0;
         for (unsigned int n=0; n<g.size(); n++) {
             Voertuig* nieuwVoertuig = g[n]->generateVoertuig(simulatietijd);
             if (nieuwVoertuig != NULL) {

@@ -11,9 +11,11 @@
 #include "vector"
 #include "string"
 #include "map"
+#include "Voertuiggenerator.h"
 
 class Baan;
 class Voertuig;
+class Voertuiggenerator;
 class Parser {
 private:
     Parser *init;

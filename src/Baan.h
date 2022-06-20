@@ -14,6 +14,7 @@
 #include "Voertuig.h"
 #include "Verkeerslicht.h"
 #include "Bushalte.h"
+#include "Voertuiggenerator.h"
 
 
 class Voertuiggenerator;

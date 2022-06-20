@@ -145,7 +145,7 @@ void Parser::XML(const char *filename) {
                     tempBanen.second = baan;
                     tempPosities.second = pos;
                 }
-                elemK = root->NextSiblingElement();
+                elemK = elemK->NextSiblingElement();
             }
             kruispunt->setBanen(tempBanen);
             kruispunt->setPosities(tempPosities);
