@@ -85,6 +85,55 @@ void projectExporter::exportOn(ostream &onStream, Verkeerssimulatie &game) {
 }
 
 
+void GrafischeExporter::exportOnG(ostream &onStream, Verkeerssimulatie &game) {
+    REQUIRE(properlyInitialized(), "Exporter was niet correct geïnitialiseerd.");
+    REQUIRE(game.properlyInitialized(), "Verkeerssimulatie was niet correct geïnitialiseerd.");
 
+    documentStart(onStream);
 
+    baanSectionStart(onStream);
+
+    for (long unsigned int i = 0; i < game.getBanen().size(); i++){
+        overview(onStream, game.getBanen()[i]);
+    }
+
+    baanSectionEnd(onStream);
+
+    documentEnd(onStream);
+}
+
+void GrafischeExporter::overview(ostream &onstream, Baan* baan) {
+    REQUIRE(properlyInitialized(), "Exporter was niet correct geïnitialiseerd bij aanroep van exportOn.");
+    REQUIRE(baan->properlyInitialized(), "Gepasseerde baan was niet correct geïnitialiseerd bij aanroep van exportOn.");
+
+    string autoOutput = "VT: ";
+    string verkeerslichtOutput = "VL: ";
+    string bushalteOutput = "BH: ";
+    for (int i = 0; baan->getLengte(); i++){
+         for (long unsigned int j = 0; baan->getVerkeerslichten().size(); j++){
+             if (baan->getVerkeerslichten()[j]->getPositie() == i){
+                 verkeerslichtOutput += "|";
+             } else {
+                 verkeerslichtOutput += " ";
+             }
+         }
+         for (long unsigned int j = 0; j < baan->getVoertuigen().size(); j++){
+             if (baan->getVoertuigen()[j]->getPositie() == i){
+                 for (int u = 0; u < baan->getVoertuigen()[j]->getLengte(); u++){
+                     autoOutput += "A";
+                 }
+             } else{
+                 autoOutput += "-";
+             }
+         }
+         for (long unsigned int j = 0; j < baan->getBushaltes().size(); j++){
+             if (baan->getBushaltes()[j]->getPositie() == i){
+                 bushalteOutput += "H";
+             } else{
+                 bushalteOutput += " ";
+             }
+         }
+    }
+    onstream << verkeerslichtOutput << endl << autoOutput << endl << bushalteOutput << endl << endl;
+}
 

@@ -24,6 +24,7 @@ protected:
 
     Verkeerssimulatie verkeerssimulatie;
     projectExporter exporter;
+    GrafischeExporter grafischeExporter;
 };
 
 TEST_F(projectOutputTests, UtilIntegrityTest){
@@ -127,7 +128,32 @@ TEST_F(projectOutputTests, BasicOutput){
     myfile.close();
 
     //delete pointers
+}
 
+TEST_F(projectOutputTests, GrafischeOutput){
+    ASSERT_TRUE(DirectoryExists("src"));
+    ASSERT_TRUE(DirectoryExists("src/testOutput"));
 
+    // Grafisch
+    vector<Baan*> banen;
+    Baan* baan = new Baan;
+    baan->setNaam("Omdehoek");
+    baan->setLengte(500);
+    banen.push_back(baan);
 
+    Auto* anAuto = new Auto;
+    anAuto->setPositie(20);
+    anAuto->setType("politiecombi");
+    anAuto->setBaan(baan);
+    anAuto->setSnelheid(5);
+    baan->addVoertuig(anAuto);
+
+    verkeerssimulatie.setBanen(banen);
+
+    ofstream myfile;
+    myfile.open("src/testOutput/GrafischExport.txt");
+    for (int i = 0; i < 10; i++){
+        grafischeExporter.exportOnG(myfile, verkeerssimulatie);
+    }
+    myfile.close();
 }
