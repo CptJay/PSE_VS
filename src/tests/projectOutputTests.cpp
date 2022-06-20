@@ -107,20 +107,22 @@ TEST_F(projectOutputTests, BasicOutput){
     vector<Baan*> banen;
     Baan* baan = new Baan;
     baan->setNaam("Omdehoek");
+    baan->setLengte(500);
     banen.push_back(baan);
-    verkeerssimulatie.setBanen(banen);
 
     Auto* anAuto = new Auto;
     anAuto->setPositie(20);
     anAuto->setType("politiecombi");
     anAuto->setBaan(baan);
+    anAuto->setSnelheid(5);
     baan->addVoertuig(anAuto);
+
+    verkeerssimulatie.setBanen(banen);
 
     ofstream myfile;
     myfile.open("src/testOutput/basicExport.txt");
     for (int i = 0; i < 10; i++){
         exporter.exportOn(myfile, verkeerssimulatie);
-        verkeerssimulatie.exportSimulatie();
     }
     myfile.close();
 
