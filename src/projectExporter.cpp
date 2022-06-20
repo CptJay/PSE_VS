@@ -74,6 +74,7 @@ void projectExporter::exportOn(ostream &onStream, Verkeerssimulatie &game) {
     baanSectionStart(onStream);
     for (long unsigned int i = 0; i < game.getBanen().size(); i++){
         baanOverview(onStream, game.getBanen()[i]);
+        game.exportSimulatie();
     }
     baanSectionEnd(onStream);
 

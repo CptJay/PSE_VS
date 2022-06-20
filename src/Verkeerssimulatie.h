@@ -116,6 +116,7 @@ public:
      */
 
     void herstart();
+    void exportSimulatie();
 };
 
 

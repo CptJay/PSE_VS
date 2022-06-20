@@ -98,3 +98,34 @@ TEST_F(projectOutputTests, UtilIntegrityTest){
     EXPECT_TRUE(FileCompare("src/testOutput/wf1", "src/testOutput/wf2"));
     EXPECT_TRUE(FileCompare("src/testOutput/wf2", "src/testOutput/wf1"));
 }
+
+TEST_F(projectOutputTests, BasicOutput){
+    ASSERT_TRUE(DirectoryExists("src"));
+    ASSERT_TRUE(DirectoryExists("src/testOutput"));
+
+    // Basic
+    vector<Baan*> banen;
+    Baan* baan = new Baan;
+    baan->setNaam("Omdehoek");
+    banen.push_back(baan);
+    verkeerssimulatie.setBanen(banen);
+
+    Auto* anAuto = new Auto;
+    anAuto->setPositie(20);
+    anAuto->setType("politiecombi");
+    anAuto->setBaan(baan);
+    baan->addVoertuig(anAuto);
+
+    ofstream myfile;
+    myfile.open("src/testOutput/basicExport.txt");
+    for (int i = 0; i < 10; ){
+        exporter.exportOn(myfile, verkeerssimulatie);
+        verkeerssimulatie.exportSimulatie();
+    }
+    myfile.close();
+
+    //delete pointers
+
+
+
+}
