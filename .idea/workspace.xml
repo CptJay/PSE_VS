@@ -16,11 +16,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd021064-0a01-4056-aedc-783ddad215e8" name="Changes" comment="Meer Inputtesten">
-      <change afterPath="$PROJECT_DIR$/src/testInput/XMLSyntaxError1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/testInput/XMLSyntaxError2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/testInput/XMLSyntaxError3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/testInput/XMLSyntaxError4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/testInput/XMLSyntaxError5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/testInput/LegalInfo1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/testInput/LegalInfo2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/testInput/LegalInfo3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/testInput/LegalInfo4.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tests/projectInputTests.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/projectInputTests.cpp" afterDir="false" />
     </list>
@@ -186,7 +185,7 @@
       <workItem from="1655595223509" duration="5505000" />
       <workItem from="1655600795377" duration="3355000" />
       <workItem from="1655647140806" duration="4355000" />
-      <workItem from="1655709311613" duration="18775000" />
+      <workItem from="1655709311613" duration="20343000" />
     </task>
     <task id="LOCAL-00001" summary="Simulatie werkt">
       <created>1648079004680</created>
@@ -265,7 +264,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655728397870</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Meer Inputtesten">
+      <created>1655729588043</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1655729588043</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

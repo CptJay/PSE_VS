@@ -26,7 +26,7 @@ protected:
     Verkeerssimulatie verkeerssimulatie;
 };
 
-TEST_F(projectInputTests, InputHappyDay){
+TEST_F(projectInputTests, HappyDaySimulatie){
     ASSERT_TRUE(DirectoryExists("src"));
     ASSERT_TRUE(DirectoryExists("src/testInput"));
 
@@ -75,15 +75,6 @@ TEST_F(projectInputTests, InputHappyDay){
     EXPECT_EQ(1, (int)verkeerssimulatie.getBanen()[0]->getVoertuigen().size());
     EXPECT_EQ(1, (int)verkeerssimulatie.getBanen()[0]->getBushaltes().size());
     EXPECT_EQ(1, (int)verkeerssimulatie.getBanen()[0]->getVerkeerslichten().size());
-
-//    cout << "aantal voertuigen baan 1: " << verkeerssimulatie.getBanen()[0]->getVoertuigen().size() << endl;
-//    cout << "aantal bushalten baan 1: " << verkeerssimulatie.getBanen()[0]->getBushaltes().size() << endl;
-//    cout << "aantal verkeerslichten baan 1: " << verkeerssimulatie.getBanen()[0]->getVerkeerslichten().size() << endl;
-//
-//    cout << "aantal voertuigen baan 2: " << verkeerssimulatie.getBanen()[1]->getVoertuigen().size() << endl;
-//    cout << "aantal bushalten baan 2: " << verkeerssimulatie.getBanen()[1]->getBushaltes().size() << endl;
-//    cout << "aantal verkeerslichten baan 2: " << verkeerssimulatie.getBanen()[1]->getVerkeerslichten().size() << endl;
-
 }
 
 TEST_F(projectInputTests, InputIllegalSim){
@@ -112,6 +103,32 @@ TEST_F(projectInputTests, InputIllegalSim){
         writeOut = "src/testOutput/IllegalInfo" + ToString(fileCounter) + ".txt";
     }
     EXPECT_TRUE(fileCounter == 9);
+}
+
+TEST_F(projectInputTests, LegalInfoSim){
+    ASSERT_TRUE(DirectoryExists("src"));
+    ASSERT_TRUE(DirectoryExists("src/testInput"));
+    ASSERT_TRUE(DirectoryExists("src/testOutput"));
+
+    ofstream myfile;
+    SuccessEnum importResult;
+    int fileCounter = 1;
+    string fileName = "src/testInput/LegalInfo" + ToString(fileCounter) + ".xml";
+    string writeOut = "src/testOutput/LegalInfo" + ToString(fileCounter) + ".txt";
+
+    while(FileExists(fileName)){
+        myfile.open(writeOut.c_str());
+        importResult = projectImporter::importVerkeerssimulatie(fileName.c_str(), myfile, verkeerssimulatie);
+        myfile.close();
+        EXPECT_TRUE(importResult == Succes);
+        EXPECT_TRUE(FileIsEmpty(writeOut));
+
+        fileCounter += 1;
+        fileName = "src/testInput/LegalInfo" + ToString(fileCounter) + ".xml";
+        writeOut = "src/testOutput/LegalInfo" + ToString(fileCounter) + ".txt";
+    }
+
+
 }
 
 TEST_F(projectInputTests, XMLSyntaxError){
