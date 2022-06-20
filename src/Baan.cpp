@@ -95,19 +95,3 @@ Voertuig *Baan::getEersteVoertuig(int p) {
     return NULL;
 }
 
-Bus* Baan::getEersteBus(int p) {
-    Bus* eerste;
-    for (long unsigned int i = 0; i < bussen.size(); i++){
-        if (bussen[i]->getPositie() <= p){
-            eerste = bussen[i];
-        }
-    }
-    if (getEersteVoertuig(p)->getPositie() == eerste->getPositie()) {
-        return eerste;
-    }
-    return NULL;
-}
-
-void Baan::addBus(Bus *b) {
-    bussen.push_back(b);
-}

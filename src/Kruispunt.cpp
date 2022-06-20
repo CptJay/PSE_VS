@@ -10,16 +10,25 @@ Kruispunt::Kruispunt() {
     ENSURE(properlyInitialized(), "Kruispunt is niet correct geïnitialiseerd.");
 }
 
-void Kruispunt::setBanen(std::map<Baan*, int> b) {
+void Kruispunt::setBanen(std::pair<Baan*,Baan*> b) {
     REQUIRE(properlyInitialized(), "Kruispunt is niet correct geïnitialiseerd.");
     banen = b;
 }
 
-std::map<Baan*,int> Kruispunt::getBanen() {
+std::pair<Baan*,Baan*> Kruispunt::getBanen() {
     REQUIRE(properlyInitialized(), "Kruispunt is niet correct geïnitialiseerd.");
     return banen;
+}
+
+std::pair<int,int>  Kruispunt::getPosities() {
+    return posities;
+}
+
+void Kruispunt::setPosities(std::pair<int, int> pos) {
+    posities = pos;
 }
 
 bool Kruispunt::properlyInitialized() const{
     return init == this;
 }
+

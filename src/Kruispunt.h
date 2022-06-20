@@ -7,11 +7,13 @@
 
 #include "Baan.h"
 #include <map>
+#include <string>
 
 
 class Kruispunt {
 private:
-    std::map<Baan*, int> banen;
+    std::pair<Baan*,Baan*> banen;
+    std::pair<int,int> posities;
     Kruispunt* init;
 public:
     Kruispunt();
@@ -27,14 +29,18 @@ public:
      *
      * REQUIRE(properlyInitialized(), "Kruispunt is niet correct geïnitialiseerd.");
      */
-    void setBanen(std::map<Baan*, int> b);
+    void setBanen(std::pair<Baan*,Baan*> b);
     /** Getter Banen
      *
      * @return
      *
      * REQUIRE(properlyInitialized(), "Kruispunt is niet correct geïnitialiseerd.");
      */
-    std::map<Baan*,int> getBanen();
+    std::pair<Baan*,Baan*> getBanen();
+    std::pair<int,int> getPosities();
+    void setPosities(std::pair<int,int> pos);
+
+
 };
 
 

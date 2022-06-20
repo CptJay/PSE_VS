@@ -29,7 +29,6 @@ private:
     std::vector<Voertuig*> voertuigen;
     std::vector<Verkeerslicht*> verkeerslichten;
     std::vector<Bushalte*> bushaltes;
-    std::vector<Bus*> bussen;
 public:
     /** Default constructor.
      * Baan wordt aangemaakt.

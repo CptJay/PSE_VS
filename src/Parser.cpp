@@ -94,8 +94,6 @@ void Parser::XML(const char *filename) {
                     } else if (typeVoertuig == "bus"){
                         Bus *bus = new Bus;
                         assignInfo(bus);
-                        Baan* juisteBaan = findBaan(baanNaam);
-                        juisteBaan->addBus(bus);
                     } else if (typeVoertuig == "brandweerwagen"){
                         Brandweerwagen *brandweerwagen = new Brandweerwagen;
                         assignInfo(brandweerwagen);
@@ -127,7 +125,8 @@ void Parser::XML(const char *filename) {
             }
         }
         else if (elem->Value() == k) {
-            std::map<Baan*,int> tempBanen;
+            std::pair<Baan*,Baan*> tempBanen;
+            std::pair<int,int> tempPosities;
             Kruispunt* kruispunt = new Kruispunt;
             TiXmlElement* elemK = elem->FirstChildElement();
             while (elemK != NULL) {
@@ -135,10 +134,19 @@ void Parser::XML(const char *filename) {
                 int pos = stringToInt(elemAtr);
                 string elemName = elemK->Value();
                 Baan* baan = findBaan(elemK->GetText());
-                tempBanen[baan] = pos;
+
+                if (tempBanen.first == NULL) {
+                    tempBanen.first = baan;
+                    tempPosities.first = pos;
+                }
+                else {
+                    tempBanen.second = baan;
+                    tempPosities.second = pos;
+                }
                 elemK = root->NextSiblingElement();
             }
             kruispunt->setBanen(tempBanen);
+            kruispunt->setPosities(tempPosities);
         }
     }
     for (unsigned int i = 0; i < banen.size(); i++) { //moet dit wel hier? moeten we niet sorteren na elke simulatiestap?

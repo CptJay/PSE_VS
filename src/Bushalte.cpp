@@ -61,7 +61,7 @@ void Bushalte::bushalteSimulatie(double simulatietijd) {
     Voertuig* eersteVoertuig = baan->getEersteVoertuig(positie);
     if (eersteVoertuig != NULL) {
         if (eersteVoertuig->getType() == "bus") {
-            Bus *bus = baan->getEersteBus(positie);
+            Bus *bus = static_cast<Bus*>(eersteVoertuig);
             int vtPositie = eersteVoertuig->getPositie();
             if (positie - eersteVoertuig->getVertraagAfstand() <= vtPositie &&
                 vtPositie <= positie - (eersteVoertuig->getStopAfstand() / 2)) {
