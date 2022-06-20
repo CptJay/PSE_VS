@@ -104,10 +104,10 @@ std::vector<Kruispunt*> Baan::getKruispunten() {
     return kruispunten;
 }
 
-void Baan::setVoertuiggenerator(Voertuiggenerator *g) {
-    vg = g;
+void Baan::addGenerator(Voertuiggenerator *g) {
+    generators.push_back(g);
 }
 
-Voertuiggenerator* Baan::getVoertuiggenerator() {
-    return vg;
+std::vector<Voertuiggenerator*> Baan::getGenerators() {
+    return generators;
 }

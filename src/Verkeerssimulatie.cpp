@@ -99,6 +99,16 @@ void Verkeerssimulatie::automatischeSimulatie() {
             for (unsigned int l=0; l<bh.size(); l++) {
                 bh[l]->bushalteSimulatie(simulatietijd);
             }
+            std::vector<Voertuiggenerator*> g = banen[i]->getGenerators();
+            int l = 0;
+            for (unsigned int n=0; n<g.size(); n++) {
+                Voertuig* nieuwVoertuig = g[n]->generateVoertuig(simulatietijd);
+                if (nieuwVoertuig != NULL) {
+                    banen[i]->addVoertuig(nieuwVoertuig);
+                    banen[i]->sorteerVoertuigen();
+                }
+
+            }
         }
         geenVoertuigenMeer = true;
         for (unsigned int i=0; i<banen.size(); i++) {
@@ -179,6 +189,15 @@ void Verkeerssimulatie::exportSimulatie() {
         std::vector<Kruispunt*> kp = banen[i]->getKruispunten();
         for (unsigned int m=0; m<kp.size(); m++) {
             kp[m]->kruispuntSimulatie(banen[i]);
+        }
+        std::vector<Voertuiggenerator*> g = banen[i]->getGenerators();
+        int l = 0;
+        for (unsigned int n=0; n<g.size(); n++) {
+            Voertuig* nieuwVoertuig = g[n]->generateVoertuig(simulatietijd);
+            if (nieuwVoertuig != NULL) {
+                banen[i]->addVoertuig(nieuwVoertuig);
+                banen[i]->sorteerVoertuigen();
+            }
         }
     }
 }

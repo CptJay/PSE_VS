@@ -159,10 +159,19 @@ void Parser::XML(const char *filename) {
                 if (elemName == "baan") {
                     Baan* juisteBaan = findBaan(elemVG->GetText());
                     g->setBaan(juisteBaan);
-                    juisteBaan->setVoertuiggenerator(g);
+                    juisteBaan->addGenerator(g);
                 }
                 else if (elemName == "frequentie") {
                     g->setFrequentie(stringToInt(elemVG->GetText()));
+                }
+                else if (elemName == "type") {
+                    string t = elemVG->GetText();
+                    g->setType(t);
+                    if (t == "auto") g->setL(4);
+                    else if (t == "bus") g->setL(12);
+                    else if (t == "brandweerwagen") g->setL(10);
+                    else if (t == "ziekenwagen") g->setL(8);
+                    else if (t == "politiecombi") g->setL(6);
                 }
             }
 

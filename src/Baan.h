@@ -32,7 +32,7 @@ private:
     std::vector<Verkeerslicht*> verkeerslichten;
     std::vector<Bushalte*> bushaltes;
     std::vector<Kruispunt*> kruispunten;
-    Voertuiggenerator* vg;
+    std::vector<Voertuiggenerator*> generators;
 public:
     /** Default constructor.
      * Baan wordt aangemaakt.
@@ -93,8 +93,9 @@ public:
     Voertuig* getEersteVoertuig(int p);
     void addKruispunt(Kruispunt* kp);
     std::vector<Kruispunt*> getKruispunten();
-    void setVoertuiggenerator(Voertuiggenerator* g);
-    Voertuiggenerator* getVoertuiggenerator();
+    void addGenerator(Voertuiggenerator* g);
+    std::vector<Voertuiggenerator*> getGenerators();
+
 };
 
 

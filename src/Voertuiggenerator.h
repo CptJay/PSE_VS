@@ -13,6 +13,9 @@ class Voertuiggenerator {
 private:
     Baan* baan;
     int frequentie;
+    double tijd;
+    std::string type;
+    int lengte;
     Voertuiggenerator* init;
 public:
     Voertuiggenerator();
@@ -20,6 +23,13 @@ public:
     Baan* getBaan();
     void setFrequentie(int f);
     int getFrequentie();
+    void updateTijd(double simulatietijd);
+    Voertuig* generateVoertuig(double simulatietijd);
+    void setType(string &t);
+    string getType();
+    bool generatePossible();
+    void setL(int l);
+    int getL();
 };
 
 
