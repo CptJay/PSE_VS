@@ -147,6 +147,8 @@ void Parser::XML(const char *filename) {
             }
             kruispunt->setBanen(tempBanen);
             kruispunt->setPosities(tempPosities);
+            tempBanen.first->addKruispunt(kruispunt);
+            tempBanen.second->addKruispunt(kruispunt);
         }
     }
     for (unsigned int i = 0; i < banen.size(); i++) { //moet dit wel hier? moeten we niet sorteren na elke simulatiestap?

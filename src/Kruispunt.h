@@ -39,6 +39,9 @@ public:
     std::pair<Baan*,Baan*> getBanen();
     std::pair<int,int> getPosities();
     void setPosities(std::pair<int,int> pos);
+    void kruispuntSimulatie(Baan* b);
+    Baan* kiesBaan();
+    int getPositie(Baan* b);
 
 
 };
