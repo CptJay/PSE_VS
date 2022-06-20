@@ -24,6 +24,7 @@ protected:
 
     Verkeerssimulatie verkeerssimulatie;
     projectExporter exporter;
+    GrafischeExporter grafischeExporter;
 };
 
 TEST_F(projectOutputTests, UtilIntegrityTest){
@@ -112,22 +113,62 @@ TEST_F(projectOutputTests, BasicOutput){
 
     Auto* anAuto = new Auto;
     anAuto->setPositie(20);
-    anAuto->setType("politiecombi");
     anAuto->setBaan(baan);
-    anAuto->setSnelheid(5);
+    anAuto->setLengte(7);
+    anAuto->setSnelheid(1);
     baan->addVoertuig(anAuto);
+
+    Verkeerslicht* verkeerslicht = new Verkeerslicht;
+    verkeerslicht->setPositie(30);
+    verkeerslicht->setCycles(20);
+    verkeerslicht->setBaan(baan);
+    baan->addVerkeerslicht(verkeerslicht);
 
     verkeerssimulatie.setBanen(banen);
 
     ofstream myfile;
-    myfile.open("src/testOutput/basicExport.txt");
+    myfile.open("src/testOutput/BasicExportExpected.txt");
     for (int i = 0; i < 10; i++){
         exporter.exportOn(myfile, verkeerssimulatie);
     }
     myfile.close();
 
     //delete pointers
+}
 
+TEST_F(projectOutputTests, GrafischeOutput){
+    ASSERT_TRUE(DirectoryExists("src"));
+    ASSERT_TRUE(DirectoryExists("src/testOutput"));
 
+    // Grafisch
+    vector<Baan*> banen;
+    Baan* baan = new Baan;
+    baan->setNaam("Omdehoek");
+    baan->setLengte(500);
+    banen.push_back(baan);
 
+    Auto* anAuto = new Auto;
+    anAuto->setPositie(20);
+    anAuto->setBaan(baan);
+    anAuto->setLengte(7);
+    anAuto->setSnelheid(1);
+//    anAuto->setVersnelling(5);
+    baan->addVoertuig(anAuto);
+
+    Verkeerslicht* verkeerslicht = new Verkeerslicht;
+//    verkeerslicht->changeColor();
+    verkeerslicht->setPositie(30);
+    verkeerslicht->setCycles(20);
+    verkeerslicht->setBaan(baan);
+    baan->addVerkeerslicht(verkeerslicht);
+
+    verkeerssimulatie.setBanen(banen);
+    verkeerssimulatie.setSimulatietijd(1);
+
+    ofstream myfile;
+    myfile.open("src/testOutput/GrafischExportExpected.txt");
+    for (int i = 0; i < 10; i++){
+        grafischeExporter.exportOnG(myfile, verkeerssimulatie);
+    }
+    myfile.close();
 }

@@ -1,0 +1,110 @@
+Verkeerslicht: 
+-> positie: 30
+-> tijd/cyclus: 0/20
+
+
+Voertuig: 0
+ -> baan: Omdehoek
+ -> positie: 20
+ -> snelheid: 1
+ -> type: auto
+
+Verkeerslicht: 
+-> positie: 30
+-> tijd/cyclus: 0.0166/20
+
+
+Voertuig: 0
+ -> baan: Omdehoek
+ -> positie: 20
+ -> snelheid: 1
+ -> type: auto
+
+Verkeerslicht: 
+-> positie: 30
+-> tijd/cyclus: 0.0332/20
+
+
+Voertuig: 0
+ -> baan: Omdehoek
+ -> positie: 20
+ -> snelheid: 1.0239
+ -> type: auto
+
+Verkeerslicht: 
+-> positie: 30
+-> tijd/cyclus: 0.0498/20
+
+
+Voertuig: 0
+ -> baan: Omdehoek
+ -> positie: 20
+ -> snelheid: 1.04781
+ -> type: auto
+
+Verkeerslicht: 
+-> positie: 30
+-> tijd/cyclus: 0.0664/20
+
+
+Voertuig: 0
+ -> baan: Omdehoek
+ -> positie: 20
+ -> snelheid: 1.07171
+ -> type: auto
+
+Verkeerslicht: 
+-> positie: 30
+-> tijd/cyclus: 0.083/20
+
+
+Voertuig: 0
+ -> baan: Omdehoek
+ -> positie: 20
+ -> snelheid: 1.09561
+ -> type: auto
+
+Verkeerslicht: 
+-> positie: 30
+-> tijd/cyclus: 0.0996/20
+
+
+Voertuig: 0
+ -> baan: Omdehoek
+ -> positie: 20
+ -> snelheid: 1.11952
+ -> type: auto
+
+Verkeerslicht: 
+-> positie: 30
+-> tijd/cyclus: 0.1162/20
+
+
+Voertuig: 0
+ -> baan: Omdehoek
+ -> positie: 20
+ -> snelheid: 1.14342
+ -> type: auto
+
+Verkeerslicht: 
+-> positie: 30
+-> tijd/cyclus: 0.1328/20
+
+
+Voertuig: 0
+ -> baan: Omdehoek
+ -> positie: 20
+ -> snelheid: 1.16733
+ -> type: auto
+
+Verkeerslicht: 
+-> positie: 30
+-> tijd/cyclus: 0.1494/20
+
+
+Voertuig: 0
+ -> baan: Omdehoek
+ -> positie: 20
+ -> snelheid: 1.19123
+ -> type: auto
+

@@ -18,7 +18,7 @@ public:
     projectExporter();
     bool properlyInitialized();
 
-/**
+    /**
 \n REQUIRE(this->properlyInitialized(), "TicTacToeExporter wasn't initialized when calling exportOn.");
 \n REQUIRE(this->documentStarted(), "TicTacToeExporter wasn't in documentStarted state when calling exportOn.");
 \n REQUIRE(game.properlyInitialized(), "game wasn't initialized when passing to Exporter::exportOn.");
@@ -39,6 +39,18 @@ private:
     projectExporter * _initCheck; //!use pointer to myself to verify whether I am properly initialized
 //    bool _documentStarted;
 };
+
+class GrafischeExporter: public projectExporter {
+public:
+
+    void exportOnG(std::ostream& onStream, Verkeerssimulatie &game);
+
+protected:
+
+    virtual void overview(std::ostream& onstream, Baan* baan);
+
+};
+
 
 
 #endif //UNTITLED_PROJECTEXPORTER_H
