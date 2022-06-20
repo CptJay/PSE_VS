@@ -15,20 +15,15 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd021064-0a01-4056-aedc-783ddad215e8" name="Changes" comment="In progress">
+    <list default="true" id="dd021064-0a01-4056-aedc-783ddad215e8" name="Changes" comment="Importer done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeCache.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_install.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Verkeerssimulatie.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Verkeerssimulatie.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Verkeerssimulatie.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Verkeerssimulatie.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/projectExporter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/projectExporter.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/projectExporter.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/projectExporter.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/projectImporter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/projectImporter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/testInput/test.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/projectDomainTests.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/projectDomainTests.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/testInput/test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/testInput/test.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tests/projectInputTests.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/projectInputTests.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/projectTests.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/projectTests.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ttt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled.cbp" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,18 +85,7 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
-  <component name="RunManager" selected="CMake Application.ttt_debug">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="projectAllTests.DefaultConstructorVerkeersimulatie" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="untitled" TARGET_NAME="ttt_debug" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="untitled" RUN_TARGET_NAME="ttt_debug" TEST_CLASS="projectAllTests" TEST_METHOD="DefaultConstructorVerkeersimulatie" TEST_MODE="SUITE_TEST">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-        <option name="BeforeTestRunTask" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Google Test.projectInputTests.InputHappyDay">
     <configuration name="projectDomainTests.Bushalte" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="untitled" TARGET_NAME="ttt_debug" RUN_TARGET_PROJECT_NAME="untitled" RUN_TARGET_NAME="ttt_debug" TEST_CLASS="projectDomainTests" TEST_METHOD="Bushalte" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -115,6 +99,12 @@
       </method>
     </configuration>
     <configuration name="projectDomainTests.DefaultConstructorVerkeersimulatie" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="untitled" TARGET_NAME="ttt_debug" RUN_TARGET_PROJECT_NAME="untitled" RUN_TARGET_NAME="ttt_debug" TEST_CLASS="projectDomainTests" TEST_METHOD="DefaultConstructorVerkeersimulatie" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="projectInputTests.InputHappyDay" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="untitled" TARGET_NAME="ttt_debug" RUN_TARGET_PROJECT_NAME="untitled" RUN_TARGET_NAME="ttt_debug" TEST_CLASS="projectInputTests" TEST_METHOD="InputHappyDay" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
@@ -145,18 +135,18 @@
       <item itemvalue="CMake Application.ttt" />
       <item itemvalue="CMake Application.ttt_debug" />
       <item itemvalue="Google Test.ttt_debug" />
-      <item itemvalue="Google Test.projectAllTests.DefaultConstructorVerkeersimulatie" />
       <item itemvalue="Google Test.projectDomainTests.DefaultConstructorBaan" />
       <item itemvalue="Google Test.projectDomainTests.DefaultConstructorVerkeersimulatie" />
       <item itemvalue="Google Test.projectDomainTests.Bushalte" />
+      <item itemvalue="Google Test.projectInputTests.InputHappyDay" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Google Test.projectInputTests.InputHappyDay" />
         <item itemvalue="CMake Application.ttt_debug" />
         <item itemvalue="Google Test.projectDomainTests.Bushalte" />
         <item itemvalue="Google Test.projectDomainTests.DefaultConstructorVerkeersimulatie" />
         <item itemvalue="Google Test.projectDomainTests.DefaultConstructorBaan" />
-        <item itemvalue="Google Test.projectAllTests.DefaultConstructorVerkeersimulatie" />
       </list>
     </recent_temporary>
   </component>
@@ -193,7 +183,9 @@
       <workItem from="1655566653541" duration="1789000" />
       <workItem from="1655570629132" duration="7683000" />
       <workItem from="1655595223509" duration="5505000" />
-      <workItem from="1655600795377" duration="2466000" />
+      <workItem from="1655600795377" duration="3355000" />
+      <workItem from="1655647140806" duration="4355000" />
+      <workItem from="1655709311613" duration="4712000" />
     </task>
     <task id="LOCAL-00001" summary="Simulatie werkt">
       <created>1648079004680</created>
@@ -244,7 +236,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655600236749</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Importer done">
+      <created>1655603367131</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1655603367131</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,7 +268,8 @@
     <MESSAGE value="projectImporter.cpp" />
     <MESSAGE value="projectImporter.cpp af denk ik" />
     <MESSAGE value="In progress" />
-    <option name="LAST_COMMIT_MESSAGE" value="In progress" />
+    <MESSAGE value="Importer done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Importer done" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -111,6 +111,7 @@ public:
      * REQUIRE(properlyInitialized(), "Verkeerssimulatie is niet correct geïnitialiseerd");
      */
     void addBaan(Baan* b);
+    void herstart();
 };
 
 

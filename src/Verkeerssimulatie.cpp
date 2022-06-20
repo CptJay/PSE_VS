@@ -145,3 +145,10 @@ void Verkeerssimulatie::addBaan(Baan* b) {
     REQUIRE(properlyInitialized(), "Verkeerssimulatie is niet correct geïnitialiseerd");
     banen.push_back(b);
 }
+
+void Verkeerssimulatie::herstart() {
+    REQUIRE(properlyInitialized(), "Verkeerssimulatie was niet correct geïnitialiseerd.");
+    for (vector<Baan*>::iterator it = banen.begin(); it != banen.end(); it++) delete *it;
+    banen.clear();
+    ENSURE(banen.empty(), "Vector banen in verkeersimulatie is niet leeg");
+}

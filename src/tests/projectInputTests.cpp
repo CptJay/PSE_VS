@@ -4,7 +4,6 @@
 
 #include <iostream>
 #include <fstream>
-#include <sys/stat.h>
 #include <gtest/gtest.h>
 
 using namespace std;
@@ -26,14 +25,46 @@ protected:
     Verkeerssimulatie verkeerssimulatie;
 };
 
-//TEST_F(projectInputTests, InputHappyDay){
-//    ASSERT_TRUE(DirectoryExists("../testInput"));
-//
-//    ofstream myfile;
-//
-//    myfile.open("../testInput/zzzInput.xml");
-//    myfile << "<?xml version =\"1.0\" ?>" << endl
-//        << "<Verkeersimulatie>" << endl;
-//
-//
-//}
+TEST_F(projectInputTests, InputHappyDay){
+    ASSERT_TRUE(DirectoryExists("src/testInput"));
+
+    ofstream myfile;
+    SuccessEnum importResult;
+
+    myfile.open("src/testInput/zzzInput.xml");
+    myfile << "<?xml version =\"1.0\" ?>" << endl
+        << "<VERKEERSSIMULATIE>" << endl
+        << "\t<BAAN>" << endl
+        << "\t\t<naam>Middelheimlaan</naam>" << endl
+        << "\t\t<lengte>500</lengte>" << endl
+        << "\t</BAAN>" << endl
+        << "\t<BAAN>" << endl
+        << "\t\t<naam>Floralienlaan</naam>" << endl
+        << "\t\t<lengte>750</lengte>" << endl
+        << "\t</BAAN>" << endl
+        << "\t<BUSHALTE>" << endl
+        << "\t\t<baan>Middelheimlaan</baan>" << endl
+        << "\t\t<positie>250</positie>" << endl
+        << "\t\t<wachttijd>20</wachttijd>" << endl
+        << "\t</BUSHALTE>" << endl
+        << "\t<VERKEERSLICHT>" << endl
+        << "\t\t<baan>Middelheimlaan</baan>" << endl
+        << "\t\t<positie>400</positie>" << endl
+        << "\t\t<cyclus>20</cyclus>" << endl
+        << "\t</VERKEERSLICHT>" << endl
+        << "\t<VOERTUIG>" << endl
+        << "\t\t<baan>Middelheimlaan</baan>" << endl
+        << "\t\t<positie>20</positie>" << endl
+        << "\t\t<type>auto</type>" << endl
+        << "\t</VOERTUIG>" << endl
+        << "</VERKEERSSIMULATIE>" << endl;
+
+
+    myfile.close();
+    myfile.open("src/testInput/zzzError.txt");
+
+    importResult = projectImporter::importVerkeerssimulatie("src/testInput/zzzInput.xml", myfile, verkeerssimulatie);
+    myfile.close();
+    EXPECT_TRUE(importResult == Succes);
+    EXPECT_TRUE(FileIsEmpty("src/testInput/zzzError.txt"));
+}

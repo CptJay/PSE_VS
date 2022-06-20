@@ -6,6 +6,7 @@
 #define UNTITLED_PROJECTEXPORTER_H
 
 #include "projectUtils.h"
+#include "Verkeerssimulatie.h"
 
 class Verkeerssimulatie;
 class projectExporter {
@@ -14,22 +15,7 @@ class projectExporter {
 \n REQUIRE(! this->documentStarted(), "After constructor a TicTacToeExporter is *not* in the documentStarted state.");
 */
     projectExporter();
-
     bool properlyInitialized();
-    bool documentStarted();
-
-/**
-\n REQUIRE(! this->documentStarted(), "TicTacToeExporter was in documentStarted when calling documentStart.");
-\n ENSURE(this->documentStarted(), "TicTacToeExporter should be in documentStarted after calling documentStart.");
-*/
-//    virtual void documentStart (std::ostream& onStream)=0;
-///**
-//\n REQUIRE(this->documentStarted(), "TicTacToeExporter wasn't in documentStarted when calling documentEnd.");
-//\n ENSURE(! this->documentStarted(), "TicTacToeExporter should not be in documentStarted after calling documentEnd.");
-//*/
-//    virtual void documentEnd (std::ostream& onStream)=0;
-
-
 
 /**
 \n REQUIRE(this->properlyInitialized(), "TicTacToeExporter wasn't initialized when calling exportOn.");
@@ -38,50 +24,20 @@ class projectExporter {
 */
     void exportOn (std::ostream& onStream, Verkeerssimulatie &game);
 
-//protected:
-//    virtual void sectionStart (std::ostream& onStream, const std::string sectionTitle);
-//    virtual void sectionEnd (std::ostream& onStream);
-//    virtual void boardStart (std::ostream& onStream);
-//    virtual void boardEnd (std::ostream& onStream);
-//    virtual void rowStart (std::ostream& onStream, const int row);
-//    virtual void rowEnd (std::ostream& onStream);
-//    virtual void cell (std::ostream& onStream, const char cellMarker);
-//    virtual void announceWinner (std::ostream& onStream, const char winnerMarker);
-//
+protected:
+
+    virtual void documentStart(std::ostream& onStream);
+    virtual void baanSectionStart(std::ostream& onStream);
+    virtual void baanOverview(std::ostream& onStream, Baan* baan);
+    virtual void baanSectionEnd(std::ostream& onStream);
+    virtual void documentEnd(std::ostream& onStream);
+
+
+
 private:
     projectExporter * _initCheck; //!use pointer to myself to verify whether I am properly initialized
-    bool _documentStarted;
+//    bool _documentStarted;
 };
-//class TicTacToeHTMLExporter : public projectExporter {
-//
-//public:
-//virtual void documentStart (std::ostream& onStream);
-//virtual void documentEnd (std::ostream& onStream);
-//
-//
-//protected:
-//virtual void sectionStart (std::ostream& onStream, const std::string sectionTitle);
-//virtual void boardStart (std::ostream& onStream);
-//virtual void boardEnd (std::ostream& onStream);
-//virtual void rowStart (std::ostream& onStream, const int row);
-//virtual void rowEnd (std::ostream& onStream);
-//virtual void cell (std::ostream& onStream, const char cellMarker);
-//virtual void announceWinner (std::ostream& onStream, const char winnerMarker);
-//
-//};
-//class TicTacToeHTMLTablesIconExporter : public TicTacToeHTMLExporter {
-//
-//public:
-//
-//
-//protected:
-//    virtual void boardStart (std::ostream& onStream);
-//    virtual void boardEnd (std::ostream& onStream);
-//    virtual void rowStart (std::ostream& onStream, const int row);
-//    virtual void rowEnd (std::ostream& onStream);
-//    virtual void cell (std::ostream& onStream, const char cellMarker);
-//    virtual void announceWinner (std::ostream& onStream, const char winnerMarker);
-//
-//};
+
 
 #endif //UNTITLED_PROJECTEXPORTER_H

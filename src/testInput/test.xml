@@ -1,4 +1,4 @@
-<ROOT>
+<VERKEERSSIMULATIE>
     <BAAN>
         <naam>Middelheimlaan</naam>
         <lengte>500</lengte>
@@ -70,4 +70,4 @@
         <type>politiecombi</type>
     </VOERTUIG>
 
-</ROOT>
+</VERKEERSSIMULATIE>

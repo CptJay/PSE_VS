@@ -30,7 +30,7 @@ SuccessEnum projectImporter::importVerkeerssimulatie(const char *inputfilename, 
 
     TiXmlDocument doc;
     SuccessEnum endResult = Succes;
-    // game reinitialise
+    game.herstart();
     REQUIRE(game.properlyInitialized(), "game wasn't initialized when passed to VerkeerssimulatieImporter");
 
     if (!doc.LoadFile(inputfilename)) {
@@ -40,8 +40,8 @@ SuccessEnum projectImporter::importVerkeerssimulatie(const char *inputfilename, 
 
     TiXmlElement *root = doc.FirstChildElement();
 
-    if (strcmp(root->Value(), "Verkeerssimulatie") != 0) {
-        errStream << "XML PARTIAL IMPORT: Expected <Verkeerssimulatie> ... </Verkeerssimulatie> and got <"
+    if (strcmp(root->Value(), "VERKEERSSIMULATIE") != 0) {
+        errStream << "XML PARTIAL IMPORT: Expected <VERKEERSSIMULATIE> ... </VERKEERSSIMULATIE> and got <"
                   << root->Value() << "> ... </" << root->Value() << ">." << endl;
         endResult = PartialImport;
     } else {
@@ -121,7 +121,7 @@ SuccessEnum projectImporter::importVerkeerssimulatie(const char *inputfilename, 
             } else if (strcmp(node->Value(), "VOERTUIG") == 0) {
                 TiXmlNode *baanNode = node->FirstChild("baan");
                 TiXmlNode *positieNode = node->FirstChild("positie");
-                TiXmlNode *typeNode = node->FirstChild("node");
+                TiXmlNode *typeNode = node->FirstChild("type");
 
                 if (baanNode == NULL || positieNode == NULL || typeNode == NULL) {
                     errStream << "[Ongeldige informatie] Onvolledige voertuig ingelezen. Voertuig wordt genegeerd."
@@ -146,7 +146,7 @@ SuccessEnum projectImporter::importVerkeerssimulatie(const char *inputfilename, 
                 if (typeString != "auto" || typeString != "bus" || typeString != "brandweerwagen" ||
                     typeString != "ziekenwagen" || typeString != "politiecombi") {
                     errStream
-                            << "[Ongeldige informatie] Type van voertuig wordt niet ondersteund. Voertuig wordt genegeerd."
+                            << "[Ongeldige informatie] Type("<< typeString <<") van voertuig wordt niet ondersteund. Voertuig wordt genegeerd."
                             << endl;
                     continue;
                 }
