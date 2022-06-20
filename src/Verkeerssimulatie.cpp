@@ -16,6 +16,7 @@
 #include "Bushalte.h"
 #include "Kruispunt.h"
 #include "Parser.h"
+#include "Voertuiggenerator.h"
 
 using namespace std;
 

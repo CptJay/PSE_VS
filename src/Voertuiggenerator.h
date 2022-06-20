@@ -25,8 +25,8 @@ public:
     int getFrequentie();
     void updateTijd(double simulatietijd);
     Voertuig* generateVoertuig(double simulatietijd);
-    void setType(string &t);
-    string getType();
+    void setType(std::string &t);
+    std::string getType();
     bool generatePossible();
     void setL(int l);
     int getL();
