@@ -1,0 +1,27 @@
+<?xml version ="1.0" ?>
+<!-- Sluitingstag van BAAN wordt afgesloten met "BAAK" ipv "BAAN" -->
+<VERKEERSSIMULATIE>
+    <BAAN>
+        <naam>Middelheimlaan</naam>
+        <lengte>500</lengte>
+    </BAAN>
+    <BAAN>
+        <naam>Floralienlaan</naam>
+        <lengte>750</lengte>
+    </BAAK>
+    <BUSHALTE>
+        <baan>Middelheimlaan</baan>
+        <positie>250</positie>
+        <wachttijd>20</wachttijd>
+    </BUSHALTE>
+    <VERKEERSLICHT>
+        <baan>Middelheimlaan</baan>
+        <positie>400</positie>
+        <cyclus>20</cyclus>
+    </VERKEERSLICHT>
+    <VOERTUIG>
+        <baan>Middelheimlaan</baan>
+        <positie>20</positie>
+        <type>bus</type>
+    </VOERTUIG>
+</VERKEERSSIMULATIE>

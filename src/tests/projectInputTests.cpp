@@ -115,5 +115,27 @@ TEST_F(projectInputTests, InputIllegalSim){
 }
 
 TEST_F(projectInputTests, XMLSyntaxError){
+    ASSERT_TRUE(DirectoryExists("src"));
+    ASSERT_TRUE(DirectoryExists("src/testInput"));
+    ASSERT_TRUE(DirectoryExists("src/testOutput"));
 
+    ofstream myfile;
+    SuccessEnum importResult;
+    int fileCounter = 1;
+    string fileName = "src/testInput/XMLSyntaxError" + ToString(fileCounter) + ".xml";
+    string writeOut = "src/testOutput/XMLSyntaxError" + ToString(fileCounter) + ".txt";
+    string errorFileName;
+
+    while (FileExists(fileName)){
+        myfile.open(writeOut.c_str());
+        importResult = projectImporter::importVerkeerssimulatie(fileName.c_str(), myfile, verkeerssimulatie);
+        myfile.close();
+        EXPECT_EQ(ImportAborted, importResult);
+        errorFileName = "src/testInput/XMLSyntaxError" + ToString(fileCounter) + ".txt";
+        EXPECT_TRUE(FileCompare(writeOut, errorFileName));
+
+        fileCounter += 1;
+        fileName = "src/testInput/XMLSyntaxError" + ToString(fileCounter) + ".xml";
+        writeOut = "src/testOutput/XMLSyntaxError" + ToString(fileCounter) + ".txt";
+    }
 }
