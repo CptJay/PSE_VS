@@ -95,6 +95,7 @@ void GrafischeExporter::exportOnG(ostream &onStream, Verkeerssimulatie &game) {
 
     for (long unsigned int i = 0; i < game.getBanen().size(); i++){
         overview(onStream, game.getBanen()[i]);
+        game.exportSimulatie();
     }
 
     baanSectionEnd(onStream);
@@ -109,10 +110,15 @@ void GrafischeExporter::overview(ostream &onstream, Baan* baan) {
     string autoOutput = "VT: ";
     string verkeerslichtOutput = "VL: ";
     string bushalteOutput = "BH: ";
-    for (int i = 0; baan->getLengte(); i++){
-         for (long unsigned int j = 0; baan->getVerkeerslichten().size(); j++){
+    for (int i = 0; i < baan->getLengte(); i++){
+         for (long unsigned int j = 0; j < baan->getVerkeerslichten().size(); j++){
              if (baan->getVerkeerslichten()[j]->getPositie() == i){
-                 verkeerslichtOutput += "|";
+                 if (baan->getVerkeerslichten()[j]->isGreen()){
+                     verkeerslichtOutput += "G";
+                 }
+                else {
+                    verkeerslichtOutput += "R";
+                }
              } else {
                  verkeerslichtOutput += " ";
              }

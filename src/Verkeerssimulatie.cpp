@@ -93,6 +93,7 @@ void Verkeerssimulatie::automatischeSimulatie() {
             std::vector<Verkeerslicht*> vl = banen[i]->getVerkeerslichten();
             for (unsigned int k=0; k<vl.size(); k++) {
                 vl[k]->verkeerslichtSimulatie(simulatietijd);
+                print();
             }
             std::vector<Bushalte*> bh = banen[i]->getBushaltes();
             for (unsigned int l=0; l<bh.size(); l++) {

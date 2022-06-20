@@ -294,9 +294,12 @@ double Voertuig::getStopAfstand() {
     return stopAfstand;
 }
 
-Auto::Auto(): Voertuig(4, 16.6, 1.44, 4.61, 4) {}
+Auto::Auto(): Voertuig(4, 16.6, 1.44, 4.61, 4) {
+    setType("auto");
+}
 
 Bus::Bus(): Voertuig(12, 11.4, 1.22, 4.29, 12) {
+    setType("bus");
     aanBushalte = false;
 }
 
@@ -309,10 +312,16 @@ void Bus::changeStatus() {
     else aanBushalte = true;
 }
 
-Brandweerwagen::Brandweerwagen(): Voertuig(10, 14.6, 1.33, 4.56, 10) {}
+Brandweerwagen::Brandweerwagen(): Voertuig(10, 14.6, 1.33, 4.56, 10) {
+    setType("brandweerwagen");
+}
 
-Ziekenwagen::Ziekenwagen(): Voertuig(8, 15.5, 1.44, 4.47, 8) {}
+Ziekenwagen::Ziekenwagen(): Voertuig(8, 15.5, 1.44, 4.47, 8) {
+    setType("ziekenwagen");
+}
 
-Politiecombi::Politiecombi(): Voertuig(6, 17.2, 1.55, 4.92, 6) {}
+Politiecombi::Politiecombi(): Voertuig(6, 17.2, 1.55, 4.92, 6) {
+    setType("politiecombi");
+}
 
 
