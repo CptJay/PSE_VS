@@ -72,18 +72,48 @@ TEST_F(projectInputTests, InputHappyDay){
 
     EXPECT_EQ(verkeerssimulatie.getBanen(),verkeerssimulatie.getBanen());
     EXPECT_EQ(2, (int)verkeerssimulatie.getBanen().size());
+    EXPECT_EQ(1, (int)verkeerssimulatie.getBanen()[0]->getVoertuigen().size());
+    EXPECT_EQ(1, (int)verkeerssimulatie.getBanen()[0]->getBushaltes().size());
+    EXPECT_EQ(1, (int)verkeerssimulatie.getBanen()[0]->getVerkeerslichten().size());
 
-    cout << "aantal voertuigen baan 1: " << verkeerssimulatie.getBanen()[0]->getVoertuigen().size() << endl;
-    cout << "aantal bushalten baan 1: " << verkeerssimulatie.getBanen()[0]->getBushaltes().size() << endl;
-    cout << "aantal verkeerslichten baan 1: " << verkeerssimulatie.getBanen()[0]->getVerkeerslichten().size() << endl;
+//    cout << "aantal voertuigen baan 1: " << verkeerssimulatie.getBanen()[0]->getVoertuigen().size() << endl;
+//    cout << "aantal bushalten baan 1: " << verkeerssimulatie.getBanen()[0]->getBushaltes().size() << endl;
+//    cout << "aantal verkeerslichten baan 1: " << verkeerssimulatie.getBanen()[0]->getVerkeerslichten().size() << endl;
+//
+//    cout << "aantal voertuigen baan 2: " << verkeerssimulatie.getBanen()[1]->getVoertuigen().size() << endl;
+//    cout << "aantal bushalten baan 2: " << verkeerssimulatie.getBanen()[1]->getBushaltes().size() << endl;
+//    cout << "aantal verkeerslichten baan 2: " << verkeerssimulatie.getBanen()[1]->getVerkeerslichten().size() << endl;
 
-    cout << "aantal voertuigen baan 2: " << verkeerssimulatie.getBanen()[1]->getVoertuigen().size() << endl;
-    cout << "aantal bushalten baan 2: " << verkeerssimulatie.getBanen()[1]->getBushaltes().size() << endl;
-    cout << "aantal verkeerslichten baan 2: " << verkeerssimulatie.getBanen()[1]->getVerkeerslichten().size() << endl;
+}
 
-//    myfile.open("src/testInput/whateva.txt");
-//    projectExporter exporter;
-//    exporter.exportOn(myfile, verkeerssimulatie);
-//    myfile.close();
+TEST_F(projectInputTests, InputIllegalSim){
+    ASSERT_TRUE(DirectoryExists("src"));
+    ASSERT_TRUE(DirectoryExists("src/testInput"));
+    ASSERT_TRUE(DirectoryExists("src/testOutput"));
+
+    ofstream myfile;
+    SuccessEnum importResult;
+    int fileCounter = 1;
+    string fileName = "src/testInput/IllegalInfo" + ToString(fileCounter) + ".xml";
+    string writeOut = "src/testOutput/IllegalInfo" + ToString(fileCounter) + ".txt";
+    string errorFileName;
+
+
+    while (FileExists(fileName)){
+        myfile.open(writeOut.c_str());
+        importResult = projectImporter::importVerkeerssimulatie(fileName.c_str(), myfile, verkeerssimulatie);
+        myfile.close();
+        EXPECT_EQ(PartialImport, importResult);
+        errorFileName = "src/testInput/IllegalInfo" + ToString(fileCounter) + ".txt";
+        EXPECT_TRUE(FileCompare(writeOut, errorFileName));
+
+        fileCounter += 1;
+        fileName = "src/testInput/IllegalInfo" + ToString(fileCounter) + ".xml";
+        writeOut = "src/testOutput/IllegalInfo" + ToString(fileCounter) + ".txt";
+    }
+    EXPECT_TRUE(fileCounter == 9);
+}
+
+TEST_F(projectInputTests, XMLSyntaxError){
 
 }

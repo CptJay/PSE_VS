@@ -64,3 +64,12 @@ bool FileCompare(const std::string& leftFileName, const std::string& rightFileNa
     rightFile.close();
     return result;
 }
+
+std::string ToString(int x) {
+    int length = snprintf( NULL, 0, "%d", x );
+    char* buf = new char[length + 1];
+    snprintf( buf, length + 1, "%d", x );
+    std::string str( buf );
+    delete[] buf;
+    return str;
+}

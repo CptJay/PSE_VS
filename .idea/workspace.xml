@@ -15,12 +15,19 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd021064-0a01-4056-aedc-783ddad215e8" name="Changes" comment="Bezig met inputTesten">
+    <list default="true" id="dd021064-0a01-4056-aedc-783ddad215e8" name="Changes" comment="inputTest werkt, nog extra testen erin zetten en gucci">
+      <change afterPath="$PROJECT_DIR$/src/testInput/IllegalInfo1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/testInput/IllegalInfo2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/testInput/IllegalInfo3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/testInput/IllegalInfo4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/testInput/IllegalInfo5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/testInput/IllegalInfo6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/testInput/IllegalInfo7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/testInput/IllegalInfo8.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Verkeerssimulatie.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Verkeerssimulatie.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Verkeerssimulatie.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Verkeerssimulatie.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/projectExporter.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/projectExporter.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/projectImporter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/projectImporter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/projectUtils.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/projectUtils.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/projectUtils.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/projectUtils.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tests/projectInputTests.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/projectInputTests.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,7 +64,9 @@
     <setting file="file://$PROJECT_DIR$/.gitignore" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="26o4c794iRgRlQ96emNhKlSEnSJ" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -83,7 +92,7 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
-  <component name="RunManager" selected="Google Test.projectInputTests.InputHappyDay">
+  <component name="RunManager" selected="CMake Application.ttt_debug">
     <configuration name="projectDomainTests.Bushalte" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="untitled" TARGET_NAME="ttt_debug" RUN_TARGET_PROJECT_NAME="untitled" RUN_TARGET_NAME="ttt_debug" TEST_CLASS="projectDomainTests" TEST_METHOD="Bushalte" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -140,9 +149,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="CMake Application.ttt_debug" />
         <item itemvalue="Google Test.projectInputTests.InputHappyDay" />
         <item itemvalue="Google Test.projectInputTests" />
-        <item itemvalue="CMake Application.ttt_debug" />
         <item itemvalue="Google Test.projectDomainTests.Bushalte" />
         <item itemvalue="Google Test.projectDomainTests.DefaultConstructorVerkeersimulatie" />
       </list>
@@ -183,7 +192,7 @@
       <workItem from="1655595223509" duration="5505000" />
       <workItem from="1655600795377" duration="3355000" />
       <workItem from="1655647140806" duration="4355000" />
-      <workItem from="1655709311613" duration="10210000" />
+      <workItem from="1655709311613" duration="17826000" />
     </task>
     <task id="LOCAL-00001" summary="Simulatie werkt">
       <created>1648079004680</created>
@@ -248,7 +257,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655714632022</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="inputTest werkt, nog extra testen erin zetten en gucci">
+      <created>1655719914277</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1655719914277</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -275,18 +291,10 @@
     <MESSAGE value="In progress" />
     <MESSAGE value="Importer done" />
     <MESSAGE value="Bezig met inputTesten" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bezig met inputTesten" />
+    <MESSAGE value="inputTest werkt, nog extra testen erin zetten en gucci" />
+    <option name="LAST_COMMIT_MESSAGE" value="inputTest werkt, nog extra testen erin zetten en gucci" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/projectImporter.cpp</url>
-          <line>163</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="CMakeGoogleTestRunConfigurationType">
         <watch expression="voertuigen[0].second[0]" />

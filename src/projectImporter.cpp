@@ -60,6 +60,7 @@ SuccessEnum projectImporter::importVerkeerssimulatie(const char *inputfilename, 
 
                 if (naamNode == NULL || lengteNode == NULL) {
                     errStream << "[Ongeldige informatie] Onvolledige baan ingelezen. Baan wordt genegeerd." << endl;
+                    endResult = PartialImport;
                     continue;
                 }
 
@@ -73,6 +74,7 @@ SuccessEnum projectImporter::importVerkeerssimulatie(const char *inputfilename, 
                 if (lengte < 0) {
                     errStream << "[Ongeldige informatie] Lengte van baan kan niet negatief zijn. Baan wordt genegeerd."
                               << endl;
+                    endResult = PartialImport;
                     continue;
                 }
 
@@ -89,6 +91,7 @@ SuccessEnum projectImporter::importVerkeerssimulatie(const char *inputfilename, 
                     errStream
                             << "[Ongeldige informatie] Onvolledige verkeerslicht ingelezen. Verkeerslicht wordt genegeerd."
                             << endl;
+                    endResult = PartialImport;
                     continue;
                 }
 
@@ -106,12 +109,14 @@ SuccessEnum projectImporter::importVerkeerssimulatie(const char *inputfilename, 
                     errStream
                             << "[Ongeldige informatie] Positie van verkeerslicht kan niet negatief zijn. Verkeerslicht wordt genegeerd."
                             << endl;
+                    endResult = PartialImport;
                     continue;
                 }
                 if (cyclus < 0) {
                     errStream
                             << "[Ongeldige informatie] Cyclus van verkeerslicht kan niet negatief zijn. Verkeerslicht wordt genegeerd."
                             << endl;
+                    endResult = PartialImport;
                     continue;
                 }
                 Verkeerslicht *vl = new Verkeerslicht;
@@ -126,6 +131,7 @@ SuccessEnum projectImporter::importVerkeerssimulatie(const char *inputfilename, 
                 if (baanNode == NULL || positieNode == NULL || typeNode == NULL) {
                     errStream << "[Ongeldige informatie] Onvolledige voertuig ingelezen. Voertuig wordt genegeerd."
                               << endl;
+                    endResult = PartialImport;
                     continue;
                 }
 
@@ -141,6 +147,7 @@ SuccessEnum projectImporter::importVerkeerssimulatie(const char *inputfilename, 
                     errStream
                             << "[Ongeldige informatie] Positie van voertuig kan niet negatief zijn. Voertuig wordt genegeerd."
                             << endl;
+                    endResult = PartialImport;
                     continue;
                 }
                 if (!(typeString == "auto" || typeString == "bus" || typeString == "brandweerwagen" ||
@@ -148,6 +155,7 @@ SuccessEnum projectImporter::importVerkeerssimulatie(const char *inputfilename, 
                     errStream
                             << "[Ongeldige informatie] Type \""<< typeString <<"\" wordt niet ondersteund. Voertuig wordt genegeerd."
                             << endl;
+                    endResult = PartialImport;
                     continue;
                 }
                 if (typeString == "auto") {
@@ -189,6 +197,7 @@ SuccessEnum projectImporter::importVerkeerssimulatie(const char *inputfilename, 
                 if (baanNode == NULL || positieNode == NULL || wachttijdNode == NULL) {
                     errStream << "[Ongeldige informatie] Onvolledige bushalte ingelezen. Bushalte wordt genegeerd."
                               << endl;
+                    endResult = PartialImport;
                     continue;
                 }
 
@@ -206,12 +215,14 @@ SuccessEnum projectImporter::importVerkeerssimulatie(const char *inputfilename, 
                     errStream
                             << "[Ongeldige informatie] Positie van bushalte kan niet negatief zijn. Bushalte wordt genegeerd."
                             << endl;
+                    endResult = PartialImport;
                     continue;
                 }
                 if (wachttijd < 0) {
                     errStream
                             << "[Ongeldige informatie] Wachttijd van bushalte kan niet negatief zijn. Bushalte wordt genegeerd."
                             << endl;
+                    endResult = PartialImport;
                     continue;
                 }
                 Bushalte *bushalte = new Bushalte;
@@ -222,24 +233,25 @@ SuccessEnum projectImporter::importVerkeerssimulatie(const char *inputfilename, 
             } else if (strcmp(node->Value(), "KRUISPUNT") == 0) {
                 continue;
             } else {
-                errStream << "[Onehrkenbaar element] Element " << node->Value() <<" wordt niet herkend. Element wordt genegeerd." << endl;
+                errStream << "[Onherkenbaar element] Element \"" << node->Value() <<"\" wordt niet herkend. Element wordt genegeerd." << endl;
                 continue;
             }
         }
         if (banen.empty()){
             errStream << "XML PARTIAL IMPORT [Inconsistente verkeerssimulatie] Er zijn geen banen ingelezen." << endl;
             endResult = PartialImport;
-            //cleanup = true;
         }
         if (voertuigen.empty()){
             errStream << "XML PARTIAL IMPORT [Inconsistente verkeerssimulatie] Er zijn geen voertuigen ingelezen." << endl;
             endResult = PartialImport;
-            //cleanup = true;
         }
         if (verkeerslichten.empty()){
             errStream << "XML PARTIAL IMPORT [Inconsistente verkeerssimulatie] Er zijn geen verkeerslichten ingelezen." << endl;
             endResult = PartialImport;
-            //cleanup = true;
+        }
+        if (bushalten.empty()){
+            errStream << "XML PARTIAL IMPORT [Inconsistente verkeerssimulatie] Er zijn geen bushalten ingelezen." << endl;
+            endResult = PartialImport;
         }
 
         //banen moeten gelinkt worden met voertuigen - verkeerslichten - bushalten
