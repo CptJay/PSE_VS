@@ -10,6 +10,7 @@
 
 class Verkeerssimulatie;
 class projectExporter {
+public:
 /**
 \n ENSURE(properlyInitialized(), "constructor must end in properlyInitialized state.");
 \n REQUIRE(! this->documentStarted(), "After constructor a TicTacToeExporter is *not* in the documentStarted state.");

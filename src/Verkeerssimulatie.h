@@ -10,6 +10,10 @@
 #include <vector>
 #include <string>
 #include "DesignByContract.h"
+#include "Baan.h"
+#include "Verkeerslicht.h"
+#include "Voertuig.h"
+#include "Bushalte.h"
 
 class Baan;
 
@@ -110,7 +114,7 @@ public:
      *
      * REQUIRE(properlyInitialized(), "Verkeerssimulatie is niet correct geïnitialiseerd");
      */
-    void addBaan(Baan* b);
+
     void herstart();
 };
 

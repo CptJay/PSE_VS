@@ -11,6 +11,7 @@ using namespace std;
 #include "../Verkeerssimulatie.h"
 #include "../projectUtils.h"
 #include "../projectImporter.h"
+#include "../projectExporter.h"
 
 
 class projectInputTests : public ::testing::Test{
@@ -26,6 +27,7 @@ protected:
 };
 
 TEST_F(projectInputTests, InputHappyDay){
+    ASSERT_TRUE(DirectoryExists("src"));
     ASSERT_TRUE(DirectoryExists("src/testInput"));
 
     ofstream myfile;
@@ -55,7 +57,7 @@ TEST_F(projectInputTests, InputHappyDay){
         << "\t<VOERTUIG>" << endl
         << "\t\t<baan>Middelheimlaan</baan>" << endl
         << "\t\t<positie>20</positie>" << endl
-        << "\t\t<type>auto</type>" << endl
+        << "\t\t<type>bus</type>" << endl
         << "\t</VOERTUIG>" << endl
         << "</VERKEERSSIMULATIE>" << endl;
 
@@ -67,4 +69,21 @@ TEST_F(projectInputTests, InputHappyDay){
     myfile.close();
     EXPECT_TRUE(importResult == Succes);
     EXPECT_TRUE(FileIsEmpty("src/testInput/zzzError.txt"));
+
+    EXPECT_EQ(verkeerssimulatie.getBanen(),verkeerssimulatie.getBanen());
+    EXPECT_EQ(2, (int)verkeerssimulatie.getBanen().size());
+
+    cout << "aantal voertuigen baan 1: " << verkeerssimulatie.getBanen()[0]->getVoertuigen().size() << endl;
+    cout << "aantal bushalten baan 1: " << verkeerssimulatie.getBanen()[0]->getBushaltes().size() << endl;
+    cout << "aantal verkeerslichten baan 1: " << verkeerssimulatie.getBanen()[0]->getVerkeerslichten().size() << endl;
+
+    cout << "aantal voertuigen baan 2: " << verkeerssimulatie.getBanen()[1]->getVoertuigen().size() << endl;
+    cout << "aantal bushalten baan 2: " << verkeerssimulatie.getBanen()[1]->getBushaltes().size() << endl;
+    cout << "aantal verkeerslichten baan 2: " << verkeerssimulatie.getBanen()[1]->getVerkeerslichten().size() << endl;
+
+//    myfile.open("src/testInput/whateva.txt");
+//    projectExporter exporter;
+//    exporter.exportOn(myfile, verkeerssimulatie);
+//    myfile.close();
+
 }

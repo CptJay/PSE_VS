@@ -143,10 +143,10 @@ SuccessEnum projectImporter::importVerkeerssimulatie(const char *inputfilename, 
                             << endl;
                     continue;
                 }
-                if (typeString != "auto" || typeString != "bus" || typeString != "brandweerwagen" ||
-                    typeString != "ziekenwagen" || typeString != "politiecombi") {
+                if (!(typeString == "auto" || typeString == "bus" || typeString == "brandweerwagen" ||
+                    typeString == "ziekenwagen" || typeString == "politiecombi")) {
                     errStream
-                            << "[Ongeldige informatie] Type("<< typeString <<") van voertuig wordt niet ondersteund. Voertuig wordt genegeerd."
+                            << "[Ongeldige informatie] Type \""<< typeString <<"\" wordt niet ondersteund. Voertuig wordt genegeerd."
                             << endl;
                     continue;
                 }
@@ -249,6 +249,7 @@ SuccessEnum projectImporter::importVerkeerssimulatie(const char *inputfilename, 
             for (long unsigned int j = 0; j < verkeerslichten.size(); j++){
                 if (verkeerslichten.find(baanNaam) != verkeerslichten.end()){
                     verkeerslichten[baanNaam]->setBaan(banen[i]);
+                    banen[i]->addVerkeerslicht(verkeerslichten[baanNaam]);
                 } else {
                     // verkeerslicht niet gevonden
                 }
@@ -259,6 +260,7 @@ SuccessEnum projectImporter::importVerkeerssimulatie(const char *inputfilename, 
                 if (bushalten.find(baanNaam) != bushalten.end()){
                     for (long unsigned int u = 0; u < bushalten[baanNaam].size(); u++){
                         bushalten[baanNaam][u]->setBaan(banen[i]);
+                        banen[i]->addBushalte(bushalten[baanNaam][u]);
                     }
                 } else {
                     //bushalte niet gevonden
@@ -270,6 +272,7 @@ SuccessEnum projectImporter::importVerkeerssimulatie(const char *inputfilename, 
                 if (voertuigen.find(baanNaam) != voertuigen.end()){
                     for (long unsigned int u = 0; u < voertuigen[baanNaam].size(); u++){
                         voertuigen[baanNaam][u]->setBaan(banen[i]);
+                        banen[i]->addVoertuig(voertuigen[baanNaam][u]);
                     }
                 } else{
                     //voertuig niet gevonden
