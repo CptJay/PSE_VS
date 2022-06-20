@@ -95,3 +95,7 @@ Voertuig *Baan::getEersteVoertuig(int p) {
     return NULL;
 }
 
+void Baan::addBus(Bus *b) {
+
+}
+

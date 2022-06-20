@@ -1,0 +1,2 @@
+[Ongeldige informatie] Positie van verkeerslicht kan niet negatief zijn. Verkeerslicht wordt genegeerd.
+XML PARTIAL IMPORT [Inconsistente verkeerssimulatie] Er zijn geen verkeerslichten ingelezen.

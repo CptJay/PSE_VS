@@ -670,7 +670,7 @@ struct GTEST_API_ ConstCharPtr {
 
 // A simple Linear Congruential Generator for generating random
 // numbers with a uniform distribution.  Unlike rand() and srand(), it
-// doesn't use global green (and therefore can't interfere with user
+// doesn't use global state (and therefore can't interfere with user
 // code).  Unlike rand_r(), it's portable.  An LCG isn't very random,
 // but it's good enough for our purposes.
 class GTEST_API_ Random {
@@ -806,12 +806,12 @@ class ImplicitlyConvertible {
   // possible loss of data, so we need to temporarily disable the
   // warning.
 #ifdef _MSC_VER
-# pragma warning(push)          // Saves the current warning green.
+# pragma warning(push)          // Saves the current warning state.
 # pragma warning(disable:4244)  // Temporarily disables warning 4244.
 
   static const bool value =
       sizeof(Helper(ImplicitlyConvertible::MakeFrom())) == 1;
-# pragma warning(pop)           // Restores the warning green.
+# pragma warning(pop)           // Restores the warning state.
 #elif defined(__BORLANDC__)
   // C++Builder cannot use member overload resolution during template
   // instantiation.  The simplest workaround is to use its C++0x type traits

@@ -1,0 +1,1 @@
+[Ongeldige informatie] Lengte van baan kan niet negatief zijn. Baan wordt genegeerd.

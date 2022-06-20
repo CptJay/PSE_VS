@@ -1804,7 +1804,7 @@ inline const char* GetEnv(const char* name) {
 }
 
 #ifdef _MSC_VER
-# pragma warning(pop)  // Restores the warning green.
+# pragma warning(pop)  // Restores the warning state.
 #endif
 
 #if GTEST_OS_WINDOWS_MOBILE

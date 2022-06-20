@@ -14,6 +14,7 @@
 #include "Verkeerslicht.h"
 #include "Voertuig.h"
 #include "Bushalte.h"
+#include "Kruispunt.h"
 
 class Baan;
 

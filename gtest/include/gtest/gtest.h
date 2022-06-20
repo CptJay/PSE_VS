@@ -590,7 +590,7 @@ class GTEST_API_ TestResult {
   // Clears the object.
   void Clear();
 
-  // Protects mutable green of the property vector and of owned
+  // Protects mutable state of the property vector and of owned
   // properties, whose values may be updated.
   internal::Mutex test_properites_mutex_;
 
@@ -1283,14 +1283,14 @@ class GTEST_API_ UnitTest {
   void PopGTestTrace()
       GTEST_LOCK_EXCLUDED_(mutex_);
 
-  // Protects mutable green in *impl_.  This is mutable as some const
+  // Protects mutable state in *impl_.  This is mutable as some const
   // methods need to lock it too.
   mutable internal::Mutex mutex_;
 
   // Opaque implementation object.  This field is never changed once
   // the object is constructed.  We don't mark it as const here, as
   // doing so will cause a warning in the constructor of UnitTest.
-  // Mutable green in *impl_ is protected by mutex_.
+  // Mutable state in *impl_ is protected by mutex_.
   internal::UnitTestImpl* impl_;
 
   // We disallow copying UnitTest.
@@ -1440,7 +1440,7 @@ AssertionResult CmpHelperEQ(const char* expected_expression,
                             const T1& expected,
                             const T2& actual) {
 #ifdef _MSC_VER
-# pragma warning(push)          // Saves the current warning green.
+# pragma warning(push)          // Saves the current warning state.
 # pragma warning(disable:4389)  // Temporarily disables warning on
                                 // signed/unsigned mismatch.
 #endif
@@ -1450,7 +1450,7 @@ AssertionResult CmpHelperEQ(const char* expected_expression,
   }
 
 #ifdef _MSC_VER
-# pragma warning(pop)          // Restores the warning green.
+# pragma warning(pop)          // Restores the warning state.
 #endif
 
   return EqFailure(expected_expression,

@@ -9,7 +9,6 @@
 #include <gtest/gtest.h>
 #include "../Verkeerssimulatie.h"
 #include "../Baan.h"
-#include "../Kruispunt.h"
 using namespace std;
 
 
@@ -187,13 +186,13 @@ EXPECT_TRUE(bh->properlyInitialized());
 delete bh;
 }
 
-TEST_F(projectDomainTests, DefaultConstructorKruispunt) {
-Kruispunt* kp = new Kruispunt;
-std::map<Baan*, int> banen;
-EXPECT_EQ(banen, kp->getBanen());
-EXPECT_TRUE(kp->properlyInitialized());
-delete kp;
-}
+//TEST_F(projectDomainTests, DefaultConstructorKruispunt) {
+//Kruispunt* kp = new Kruispunt;
+//std::map<Baan*, int> banen;
+//EXPECT_EQ(banen, kp->getBanen());
+//EXPECT_TRUE(kp->properlyInitialized());
+//delete kp;
+//}
 
 TEST_F(projectDomainTests, SetterVerkeerssimulatie) {
 Baan* baan1 = new Baan;
@@ -245,23 +244,23 @@ delete baan1;
 delete bh;
 }
 
-TEST_F(projectDomainTests, SettersKruispunt) {
-Kruispunt* kp = new Kruispunt;
-Baan* baan1 = new Baan;
-baan1->setNaam("Botermelkbaan");
-baan1->setLengte(900);
-Baan* baan2 = new Baan;
-baan2->setNaam("Carnotstraat");
-baan2->setLengte(900);
-std::map<Baan*, int> banen;
-banen[baan1] = 400;
-banen[baan2] = 500;
-kp->setBanen(banen);
-EXPECT_EQ(banen, kp->getBanen());
-delete kp;
-delete baan1;
-delete baan2;
-}
+//TEST_F(projectDomainTests, SettersKruispunt) {
+//Kruispunt* kp = new Kruispunt;
+//Baan* baan1 = new Baan;
+//baan1->setNaam("Botermelkbaan");
+//baan1->setLengte(900);
+//Baan* baan2 = new Baan;
+//baan2->setNaam("Carnotstraat");
+//baan2->setLengte(900);
+//std::map<Baan*, int> banen;
+//banen[baan1] = 400;
+//banen[baan2] = 500;
+//kp->setBanen(banen);
+//EXPECT_EQ(banen, kp->getBanen());
+//delete kp;
+//delete baan1;
+//delete baan2;
+//}
 
 TEST_F(projectDomainTests, SettersVerkeerslicht) {
 Verkeerslicht* vl = new Verkeerslicht;
@@ -342,7 +341,6 @@ Bus *bus = new Bus;
 Bushalte *bushalte = new Bushalte;
 bushalte->setWachttijd(2);
 baan1->addVoertuig(bus);
-baan1->addBus(bus);
 bushalte->setBaan(baan1);
 bushalte->setPositie(200);
 bus->setBaan(baan1);

@@ -581,7 +581,7 @@ class UniversalPrinter {
   // MSVC warns about adding const to a function type, so we want to
   // disable the warning.
 #ifdef _MSC_VER
-# pragma warning(push)          // Saves the current warning green.
+# pragma warning(push)          // Saves the current warning state.
 # pragma warning(disable:4180)  // Temporarily disables warning 4180.
 #endif  // _MSC_VER
 
@@ -601,7 +601,7 @@ class UniversalPrinter {
   }
 
 #ifdef _MSC_VER
-# pragma warning(pop)           // Restores the warning green.
+# pragma warning(pop)           // Restores the warning state.
 #endif  // _MSC_VER
 };
 
@@ -655,7 +655,7 @@ class UniversalPrinter<T&> {
   // MSVC warns about adding const to a function type, so we want to
   // disable the warning.
 #ifdef _MSC_VER
-# pragma warning(push)          // Saves the current warning green.
+# pragma warning(push)          // Saves the current warning state.
 # pragma warning(disable:4180)  // Temporarily disables warning 4180.
 #endif  // _MSC_VER
 
@@ -669,7 +669,7 @@ class UniversalPrinter<T&> {
   }
 
 #ifdef _MSC_VER
-# pragma warning(pop)           // Restores the warning green.
+# pragma warning(pop)           // Restores the warning state.
 #endif  // _MSC_VER
 };
 
