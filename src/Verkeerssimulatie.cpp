@@ -148,6 +148,7 @@ void Verkeerssimulatie::herstart() {
     ENSURE(banen.empty(), "Vector banen in verkeersimulatie is niet leeg");
 }
 
+
 void Verkeerssimulatie::exportSimulatie() {
     for (unsigned int i=0; i<banen.size(); i++) {
         vector<Voertuig*> vt = banen[i]->getVoertuigen();
@@ -173,6 +174,10 @@ void Verkeerssimulatie::exportSimulatie() {
         std::vector<Bushalte*> bh = banen[i]->getBushaltes();
         for (unsigned int l=0; l<bh.size(); l++) {
             bh[l]->bushalteSimulatie(simulatietijd);
+        }
+        std::vector<Kruispunt*> kp = banen[i]->getKruispunten();
+        for (unsigned int m=0; m<kp.size(); m++) {
+            kp[m]->kruispuntSimulatie(banen[i]);
         }
     }
 }

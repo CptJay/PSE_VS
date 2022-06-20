@@ -95,7 +95,11 @@ Voertuig *Baan::getEersteVoertuig(int p) {
     return NULL;
 }
 
-void Baan::addBus(Bus *b) {
+void Baan::addKruispunt(Kruispunt *kp) {
+    kruispunten.push_back(kp);
+}
 
+std::vector<Kruispunt*> Baan::getKruispunten() {
+    return kruispunten;
 }
 
