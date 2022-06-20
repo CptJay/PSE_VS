@@ -171,4 +171,6 @@ TEST_F(projectOutputTests, GrafischeOutput){
         grafischeExporter.exportOnG(myfile, verkeerssimulatie);
     }
     myfile.close();
+
+    EXPECT_TRUE(FileCompare("src/testOutput/GrafischExport.txt", "src/testOutput/GrafischExportExpected.txt"));
 }

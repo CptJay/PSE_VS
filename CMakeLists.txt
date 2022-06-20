@@ -40,6 +40,7 @@ set(DEBUG_SOURCE_FILES
         src/Parser.h src/Parser.cpp
         src/Bushalte.cpp src/Bushalte.h
         src/Kruispunt.cpp src/Kruispunt.h
+
         src/projectImporter.cpp src/projectImporter.h
         src/projectExporter.cpp src/projectExporter.h
         src/projectUtils.cpp src/projectUtils.h src/Voertuiggenerator.cpp src/Voertuiggenerator.h)

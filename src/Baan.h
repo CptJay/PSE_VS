@@ -14,9 +14,10 @@
 #include "Voertuig.h"
 #include "Verkeerslicht.h"
 #include "Bushalte.h"
-#include "Kruispunt.h"
-#include "Voertuiggenerator.h"
 
+
+class Voertuiggenerator;
+class Kruispunt;
 class Voertuig;
 
 /** @class Baan

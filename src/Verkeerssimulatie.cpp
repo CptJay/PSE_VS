@@ -176,9 +176,9 @@ void Verkeerssimulatie::exportSimulatie() {
         for (unsigned int l=0; l<bh.size(); l++) {
             bh[l]->bushalteSimulatie(simulatietijd);
         }
-        std::vector<Kruispunt*> kp = banen[i]->getKruispunten();
-        for (unsigned int m=0; m<kp.size(); m++) {
-            kp[m]->kruispuntSimulatie(banen[i]);
-        }
+//        std::vector<Kruispunt*> kp = banen[i]->getKruispunten();
+//        for (unsigned int m=0; m<kp.size(); m++) {
+//            kp[m]->kruispuntSimulatie(banen[i]);
+//        }
     }
 }

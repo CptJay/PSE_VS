@@ -35,12 +35,14 @@ bool Kruispunt::properlyInitialized() const{
 }
 
 int Kruispunt::getPositie(Baan *b) {
+
     if (banen.first->getNaam() == b->getNaam()) {
         return posities.first;
     }
     else if (banen.second->getNaam() == b->getNaam()) {
         return posities.second;
     }
+    ENSURE(true == false, "Geen positie");
 }
 
 void Kruispunt::kruispuntSimulatie(Baan* b) {
