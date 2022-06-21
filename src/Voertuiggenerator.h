@@ -28,6 +28,7 @@ public:
      * @param b Pointer naar een baan.
      *
      * REQUIRE(properlyInitialized(), "Voertuiggenerator is niet correct geïnitialiseerd.");
+     * ENSURE(baan != NULL, "Baan is niet aangepast.");
      */
     void setBaan(Baan* b);
     /** Getter baan.
@@ -42,6 +43,7 @@ public:
      * @param f Int die de frequentie voorstelt
      *
      * REQUIRE(properlyInitialized(), "Voertuiggenerator is niet correct geïnitialiseerd.");
+     * ENSURE(frequentie != 0, "Frequentie is niet aangepast.");
      */
     void setFrequentie(int f);
     /** Getter frequentie.
@@ -49,6 +51,7 @@ public:
      * @return Int die de frequentie voorstelt.
      *
      * REQUIRE(properlyInitialized(), "Voertuiggenerator is niet correct geïnitialiseerd.");
+     * REQUIRE(f > 0, "Frequentie kan niet kleiner of gelijk zijn aan 0.");
      */
     int getFrequentie();
     /** Houdt de tijd van de generator up-to-date met de simulatie.
@@ -56,6 +59,8 @@ public:
      * @param simulatietijd Double die de simulatietijd voorstelt.
      *
      * REQUIRE(properlyInitialized(), "Voertuiggenerator is niet correct geïnitialiseerd.");
+     * REQUIRE(simulatietijd > 0, "Simulatietijd kan niet kleiner of gelijk zijn aan 0.");
+     * ENSURE(tijd != 0, "Tijd is niet aangepast.");
      */
     void updateTijd(double simulatietijd);
     /** Maakt een nieuw voertuig aan op het begin van de baan, als dit mogelijk is.
@@ -64,6 +69,7 @@ public:
      * @return Pointer naar een nieuw voertuig of een nullpointer.
      *
      * REQUIRE(properlyInitialized(), "Voertuiggenerator is niet correct geïnitialiseerd.");
+     * REQUIRE(simulatietijd > 0, "Simulatietijd kan niet kleiner of gelijk zijn aan 0.");
      */
     Voertuig* generateVoertuig(double simulatietijd);
     /** Setter typeV.
@@ -71,6 +77,8 @@ public:
      * @param t String die het type beschrijft.
      *
      * REQUIRE(properlyInitialized(), "Voertuiggenerator is niet correct geïnitialiseerd.");
+     * REQUIRE(t != "", "Type kan niet leeg zijn.");
+     * ENSURE(type != "", "TypeV is niet aangepast.");
      */
     void setType(std::string &t);
     /** Setter lengte.
@@ -78,6 +86,8 @@ public:
      * @param l Int die de lengte voorstelt.
      *
      * REQUIRE(properlyInitialized(), "Voertuiggenerator is niet correct geïnitialiseerd.");
+     * REQUIRE(l > 0, "Lengte kan niet kleiner of gelijk zijn aan 0.");
+     * ENSURE(lengte != 0, "Lengte is niet aangepast.);
      */
     void setL(int l);
     /** Getter lengte.
