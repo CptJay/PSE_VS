@@ -111,20 +111,48 @@ TEST_F(projectOutputTests, BasicOutput){
     baan->setLengte(500);
     banen.push_back(baan);
 
+    Baan* baan2 = new Baan;
+    baan2->setNaam("Omdehoek2");
+    baan2->setLengte(200);
+    banen.push_back(baan2);
+
     Auto* anAuto = new Auto;
     anAuto->setPositie(20);
     anAuto->setBaan(baan);
     anAuto->setLengte(7);
     anAuto->setSnelheid(1);
+//    anAuto->setVersnelling(5);
     baan->addVoertuig(anAuto);
 
+    Politiecombi* politiecombi = new Politiecombi;
+    politiecombi->setPositie(20);
+    politiecombi->setBaan(baan2);
+    politiecombi->setLengte(10);
+    politiecombi->setSnelheid(10);
+    baan2->addVoertuig(politiecombi);
+
     Verkeerslicht* verkeerslicht = new Verkeerslicht;
+//    verkeerslicht->changeColor();
     verkeerslicht->setPositie(30);
     verkeerslicht->setCycles(20);
     verkeerslicht->setBaan(baan);
     baan->addVerkeerslicht(verkeerslicht);
 
+    pair<Baan*, Baan* > tempBanen;
+    tempBanen.first = baan;
+    tempBanen.second = baan2;
+    pair<int, int> tempPos;
+    tempPos.first = 50;
+    tempPos.second = 45;
+    Kruispunt* kruispunt = new Kruispunt;
+    kruispunt->setBanen(tempBanen);
+    kruispunt->setPosities(tempPos);
+    baan->addKruispunt(kruispunt);
+    baan2->addKruispunt(kruispunt);
+
+
     verkeerssimulatie.setBanen(banen);
+    verkeerssimulatie.setSimulatietijd(1);
 
     ofstream myfile;
     myfile.open("src/testOutput/BasicExportExpected.txt");
@@ -148,6 +176,11 @@ TEST_F(projectOutputTests, GrafischeOutput){
     baan->setLengte(500);
     banen.push_back(baan);
 
+    Baan* baan2 = new Baan;
+    baan2->setNaam("Omdehoek2");
+    baan2->setLengte(200);
+    banen.push_back(baan2);
+
     Auto* anAuto = new Auto;
     anAuto->setPositie(20);
     anAuto->setBaan(baan);
@@ -156,12 +189,32 @@ TEST_F(projectOutputTests, GrafischeOutput){
 //    anAuto->setVersnelling(5);
     baan->addVoertuig(anAuto);
 
+    Politiecombi* politiecombi = new Politiecombi;
+    politiecombi->setPositie(20);
+    politiecombi->setBaan(baan2);
+    politiecombi->setLengte(10);
+    politiecombi->setSnelheid(10);
+    baan2->addVoertuig(politiecombi);
+
     Verkeerslicht* verkeerslicht = new Verkeerslicht;
 //    verkeerslicht->changeColor();
     verkeerslicht->setPositie(30);
     verkeerslicht->setCycles(20);
     verkeerslicht->setBaan(baan);
     baan->addVerkeerslicht(verkeerslicht);
+
+    pair<Baan*, Baan* > tempBanen;
+    tempBanen.first = baan;
+    tempBanen.second = baan2;
+    pair<int, int> tempPos;
+    tempPos.first = 50;
+    tempPos.second = 45;
+    Kruispunt* kruispunt = new Kruispunt;
+    kruispunt->setBanen(tempBanen);
+    kruispunt->setPosities(tempPos);
+    baan->addKruispunt(kruispunt);
+    baan2->addKruispunt(kruispunt);
+
 
     verkeerssimulatie.setBanen(banen);
     verkeerssimulatie.setSimulatietijd(1);

@@ -110,3 +110,7 @@ void Baan::addGenerator(Voertuiggenerator *g) {
 std::vector<Voertuiggenerator*> Baan::getGenerators() {
     return generators;
 }
+
+bool Baan::hasKruispunt() {
+    return !kruispunten.empty();
+}

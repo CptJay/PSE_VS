@@ -93,6 +93,7 @@ protected:
     * REQUIRE(baan->properlyInitialised(), "Gepasseerde baan was niet correct geïnitialiseerd.");
     */
     virtual void overview(std::ostream& onstream, Baan* baan);
+    virtual std::string typeVoertuig(std::basic_string<char> typeV);
 
 };
 

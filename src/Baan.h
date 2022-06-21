@@ -98,6 +98,7 @@ public:
     std::vector<Kruispunt*> getKruispunten();
     void addGenerator(Voertuiggenerator* g);
     std::vector<Voertuiggenerator*> getGenerators();
+    bool hasKruispunt();
 
 };
 
