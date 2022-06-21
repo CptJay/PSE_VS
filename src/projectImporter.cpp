@@ -82,6 +82,16 @@ SuccessEnum projectImporter::importVerkeerssimulatie(const char *inputfilename, 
                     endResult = PartialImport;
                     continue;
                 }
+                bool skip = false;
+                for (long unsigned int j = 0; j < banen.size(); j++){
+                    if (banen[j]->getNaam() == naamString){
+                        errStream << "[Ongeldige informatie] Baan wordt dubbelingegeven. Baan \""<< naamString <<"\" wordt genegeerd."
+                                  << endl;
+                        endResult = PartialImport;
+                        skip = true;
+                    }
+                }
+                if (skip) continue;
 
                 Baan *baan = new Baan;
                 baan->setLengte(lengte);
@@ -385,10 +395,10 @@ SuccessEnum projectImporter::importVerkeerssimulatie(const char *inputfilename, 
 
             // kruispunten
             for (std::map<pair<string, string>, Kruispunt* >::iterator it = kruispunten.begin(); it != kruispunten.end(); it++){
-                pair<Baan*, Baan*> kruispunt;
                 if (it->first.first == baanNaam){
                     for (vector<Baan* >::iterator itx = banen.begin(); itx != banen.end(); itx++){
                         if (it->first.second == (*itx)->getNaam()){
+                            pair<Baan*, Baan*> kruispunt;
                             kruispunt.first = banen[i];
                             kruispunt.second = (*itx);
 
