@@ -127,7 +127,7 @@ TEST_F(projectInputTests, LegalInfoSim){
         fileName = "src/testInput/LegalInfo" + ToString(fileCounter) + ".xml";
         writeOut = "src/testOutput/LegalInfo" + ToString(fileCounter) + ".txt";
     }
-
+    EXPECT_TRUE(fileCounter == 6);
 
 }
 
@@ -155,6 +155,7 @@ TEST_F(projectInputTests, XMLSyntaxError){
         fileName = "src/testInput/XMLSyntaxError" + ToString(fileCounter) + ".xml";
         writeOut = "src/testOutput/XMLSyntaxError" + ToString(fileCounter) + ".txt";
     }
+    EXPECT_TRUE(fileCounter == 6);
 }
 
 TEST_F(projectInputTests, Kruispunt){
@@ -167,10 +168,9 @@ TEST_F(projectInputTests, Kruispunt){
     string fileName = "src/testInput/LegalInfo5.xml";
     string writeOut = "src/testOutput/LegalInfo5.txt";
 
-    myfile.open("src/testInput/LegalInfo5.txt");
+    myfile.open(writeOut.c_str());
     importResult = projectImporter::importVerkeerssimulatie(fileName.c_str(), myfile, verkeerssimulatie);
     myfile.close();
 
     ASSERT_EQ(Succes, importResult);
-
 }
