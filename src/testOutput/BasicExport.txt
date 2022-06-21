@@ -1,0 +1,204 @@
+### Baan: Middelheim ###
+Verkeerslicht: 
+-> positie: 30
+-> tijd/cyclus: 0/20
+
+Bushalte: 
+ -> positie: 30
+ -> tijd/wachttijd: 0/20
+
+Voertuig: 0
+ -> positie: 20
+ -> snelheid: 1
+ -> type: auto
+
+### Baan: Flora ###
+
+
+Voertuig: 0
+ -> positie: 30
+ -> snelheid: 10
+ -> type: politiecombi
+
+### Baan: Middelheim ###
+Verkeerslicht: 
+-> positie: 30
+-> tijd/cyclus: 2/20
+
+Bushalte: 
+ -> positie: 30
+ -> tijd/wachttijd: 0/20
+
+Voertuig: 0
+ -> positie: 24
+ -> snelheid: 2.43998
+ -> type: auto
+
+### Baan: Flora ###
+
+
+Voertuig: 0
+ -> positie: 55
+ -> snelheid: 12.6266
+ -> type: politiecombi
+
+### Baan: Middelheim ###
+Verkeerslicht: 
+-> positie: 30
+-> tijd/cyclus: 4/20
+
+Bushalte: 
+ -> positie: 30
+ -> tijd/wachttijd: 0/20
+
+Voertuig: 0
+ -> positie: 26
+ -> snelheid: 1.27294
+ -> type: auto
+
+### Baan: Flora ###
+
+
+Voertuig: 0
+ -> positie: 84
+ -> snelheid: 14.6477
+ -> type: politiecombi
+
+### Baan: Middelheim ###
+Verkeerslicht: 
+-> positie: 30
+-> tijd/cyclus: 6/20
+
+Bushalte: 
+ -> positie: 30
+ -> tijd/wachttijd: 0/20
+
+Voertuig: 0
+ -> positie: 26
+ -> snelheid: 0.664096
+ -> type: auto
+
+### Baan: Flora ###
+
+
+Voertuig: 0
+ -> positie: 115
+ -> snelheid: 15.9409
+ -> type: politiecombi
+
+### Baan: Middelheim ###
+Verkeerslicht: 
+-> positie: 30
+-> tijd/cyclus: 8/20
+
+Bushalte: 
+ -> positie: 30
+ -> tijd/wachttijd: 0/20
+
+Voertuig: 0
+ -> positie: 26
+ -> snelheid: 0.34646
+ -> type: auto
+
+### Baan: Flora ###
+
+
+Voertuig: 0
+ -> positie: 147
+ -> snelheid: 16.6326
+ -> type: politiecombi
+
+### Baan: Middelheim ###
+Verkeerslicht: 
+-> positie: 30
+-> tijd/cyclus: 10/20
+
+Bushalte: 
+ -> positie: 30
+ -> tijd/wachttijd: 0/20
+
+Voertuig: 0
+ -> positie: 26
+ -> snelheid: 0.180749
+ -> type: auto
+
+### Baan: Flora ###
+
+
+Voertuig: 0
+ -> positie: 180
+ -> snelheid: 16.9573
+ -> type: politiecombi
+
+### Baan: Middelheim ###
+Verkeerslicht: 
+-> positie: 30
+-> tijd/cyclus: 12/20
+
+Bushalte: 
+ -> positie: 30
+ -> tijd/wachttijd: 0/20
+
+Voertuig: 0
+ -> positie: 26
+ -> snelheid: 0.0942969
+ -> type: auto
+
+### Baan: Flora ###
+
+
+
+### Baan: Middelheim ###
+Verkeerslicht: 
+-> positie: 30
+-> tijd/cyclus: 14/20
+
+Bushalte: 
+ -> positie: 30
+ -> tijd/wachttijd: 0/20
+
+Voertuig: 0
+ -> positie: 26
+ -> snelheid: 0.0491948
+ -> type: auto
+
+### Baan: Flora ###
+
+
+
+### Baan: Middelheim ###
+Verkeerslicht: 
+-> positie: 30
+-> tijd/cyclus: 16/20
+
+Bushalte: 
+ -> positie: 30
+ -> tijd/wachttijd: 0/20
+
+Voertuig: 0
+ -> positie: 26
+ -> snelheid: 0.025665
+ -> type: auto
+
+### Baan: Flora ###
+
+
+
+### Baan: Middelheim ###
+Verkeerslicht: 
+-> positie: 30
+-> tijd/cyclus: 18/20
+
+Bushalte: 
+ -> positie: 30
+ -> tijd/wachttijd: 0/20
+
+Voertuig: 0
+ -> positie: 26
+ -> snelheid: 0.0133895
+ -> type: auto
+
+### Baan: Flora ###
+
+
+
