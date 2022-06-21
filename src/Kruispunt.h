@@ -31,6 +31,8 @@ public:
      * @param b Pair bestaande uit pointers naar een baan.
      *
      * REQUIRE(properlyInitialized(), "Kruispunt is niet correct geïnitialiseerd.");
+     * ENSURE(banen.first != NULL, "Kruispunt kan niet op een onbestaande baan staan."):
+     * ENSURE(banen.second != NULL, "Kruispunt kan niet op een onbestaande baan staan."):
      */
     void setBanen(std::pair<Baan*,Baan*> b);
     /** Getter Banen.
@@ -47,6 +49,7 @@ public:
      * @return Pair bestaande uit integers
      *
      * REQUIRE(properlyInitialized(), "Kruispunt is niet correct geïnitaliseerd.");
+
      */
     std::pair<int,int> getPosities();
     /** Setter Posities
@@ -54,8 +57,6 @@ public:
      * @param pos Pair bestaande uit integers.
      *
      * REQUIRE(properlyInitialized(), "Kruispunt is niet correct geïnitaliseerd.");
-     * REQUIRE(pos.first >= 0, "Positie kan niet negatief zijn.");
-     * REQUIRE(pos.second >= 0, "Positie kan niet negatief zijn.");
      */
     void setPosities(std::pair<int,int> pos);
     /** Voertuigen die aan het kruispunt staan, laten veranderen van baan.
