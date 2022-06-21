@@ -168,11 +168,22 @@ void Parser::XML(const char *filename) {
                 else if (elemName == "type") {
                     string t = elemVG->GetText();
                     g->setType(t);
-                    if (t == "auto") g->setL(4);
-                    else if (t == "bus") g->setL(12);
-                    else if (t == "brandweerwagen") g->setL(10);
-                    else if (t == "ziekenwagen") g->setL(8);
-                    else if (t == "politiecombi") g->setL(6);
+                    string a = "auto"; string bu = "bus"; string bw = "brandweerwagen"; string zw = "ziekenwagen"; string pc = "politiecombi";
+                    if (t == a) {
+                        g->setL(4); g->setType(a);
+                    }
+                    else if (t == bu) {
+                        g->setL(12); g->setType(bu);
+                    }
+                    else if (t == bw) {
+                        g->setL(10); g->setType(bw);
+                    }
+                    else if (t == zw) {
+                        g->setL(8); g->setType(zw);
+                    }
+                    else if (t == pc) {
+                        g->setL(6); g->setType(pc);
+                    }
                 }
             }
         }

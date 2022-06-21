@@ -7,6 +7,7 @@
 
 Voertuiggenerator::Voertuiggenerator() {
     frequentie = 0;
+    lengte = 0;
     tijd = 0;
     init = this;
 }
@@ -77,3 +78,10 @@ bool Voertuiggenerator::generatePossible() {
     return true;
 }
 
+double Voertuiggenerator::getTijd() {
+    return tijd;
+}
+
+bool Voertuiggenerator::properlyInitialized() const{
+    return init == this;
+}

@@ -52,6 +52,9 @@ void Kruispunt::kruispuntSimulatie(Baan* b) {
         int pos = getPositie(b);
         if (vt[i]->getPositie() >= pos-10 && vt[i]->getPositie() <= pos) {
             Baan* nieuweBaan = kiesBaan();
+            std::vector<Voertuig*> vtgen = b->getVoertuigen();
+            std::vector<Voertuig*> nieuweVt;
+            b->verwijderVoertuigen();
             vt[i]->setBaan(nieuweBaan);
             int nieuwePos = getPositie(nieuweBaan);
             vt[i]->setPositie(nieuwePos);

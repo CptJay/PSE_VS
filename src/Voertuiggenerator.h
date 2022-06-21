@@ -30,6 +30,8 @@ public:
     bool generatePossible();
     void setL(int l);
     int getL();
+    double getTijd();
+    bool properlyInitialized() const;
 };
 
 
