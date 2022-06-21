@@ -56,10 +56,6 @@ void Voertuiggenerator::setType(std::string &t) {
     typeV = t;
 }
 
-std::string Voertuiggenerator::getType() {
-    return typeV;
-}
-
 void Voertuiggenerator::setL(int l) {
     lengte = l;
 }

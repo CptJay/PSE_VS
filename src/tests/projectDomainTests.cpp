@@ -411,12 +411,15 @@ TEST_F(projectDomainTests,VoertuiggeneratorSimulatie) {
     string au = "auto";
     g->setType(au);
     g->setL(a->getLengte());
-    EXPECT_FALSE(g->generatePossible());
     g->updateTijd(1);
     g->updateTijd(1);
-    a->setPositie(100);
-    EXPECT_TRUE(g->generatePossible());
     Voertuig* nieuwVoertuig = g->generateVoertuig(1);
+    EXPECT_TRUE(nieuwVoertuig == NULL);
+    a->setPositie(100);
+    g->updateTijd(1);
+    g->updateTijd(1);
+    EXPECT_TRUE(g->generatePossible());
+    nieuwVoertuig = g->generateVoertuig(1);
     EXPECT_EQ(0,g->getTijd());
     EXPECT_TRUE(nieuwVoertuig != NULL);
 }

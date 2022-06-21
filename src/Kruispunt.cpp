@@ -24,10 +24,12 @@ std::pair<Baan*,Baan*> Kruispunt::getBanen() {
 }
 
 std::pair<int,int>  Kruispunt::getPosities() {
+    REQUIRE(properlyInitialized(), "Kruispunt is niet correct geïnitaliseerd.");
     return posities;
 }
 
 void Kruispunt::setPosities(std::pair<int, int> pos) {
+    REQUIRE(properlyInitialized(), "Kruispunt is niet correct geïnitaliseerd.");
     posities = pos;
 }
 
@@ -36,6 +38,7 @@ bool Kruispunt::properlyInitialized() const{
 }
 
 int Kruispunt::getPositie(Baan *b) {
+    REQUIRE(properlyInitialized(), "Kruispunt is niet correct geïnitaliseerd.");
 
     if (banen.first->getNaam() == b->getNaam()) {
         return posities.first;
@@ -47,6 +50,7 @@ int Kruispunt::getPositie(Baan *b) {
 }
 
 void Kruispunt::kruispuntSimulatie(Baan* b) {
+    REQUIRE(properlyInitialized(), "Kruispunt is niet correct geïnitaliseerd.");
     std::vector<Voertuig*> vt = b->getVoertuigen();
     for (unsigned int i = 0; i < vt.size(); i++) {
         int pos = getPositie(b);
@@ -64,6 +68,7 @@ void Kruispunt::kruispuntSimulatie(Baan* b) {
 }
 
 Baan* Kruispunt::kiesBaan() {
+    REQUIRE(properlyInitialized(), "Kruispunt is niet correct geïnitaliseerd.");
     if (banen.first->getLengte() == posities.first) {
         return banen.second;
     }
