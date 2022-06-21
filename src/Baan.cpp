@@ -68,7 +68,7 @@ void Baan::addVerkeerslicht(Verkeerslicht *vl) {
 void Baan::verwijderVoertuigen() {
     std::vector<Voertuig*> vt;
     for (unsigned int i=0; i<voertuigen.size(); i++) {
-        if (voertuigen[i]->getPositie() <= lengte) vt.push_back(voertuigen[i]);
+        if (voertuigen[i]->getPositie() <= lengte && voertuigen[i]->getBaan()->getNaam() == naam) vt.push_back(voertuigen[i]);
     }
     voertuigen = vt;
 }

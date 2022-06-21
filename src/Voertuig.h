@@ -359,8 +359,21 @@ class Bus: public Voertuig{
 private:
     bool aanBushalte;
 public:
+    /** Default constructor.
+     *
+     */
     Bus();
+    /** Checkt of een bus aan een bushalte staat.
+     *
+     * @return Bool die aangeeft of een bus aan een bushalte staat.
+     *
+     * REQUIRE(properlyInitialized(), "Bus is niet correct geïnitialiseerd.");
+     */
     bool isAanBushalte();
+    /** Verandert het al dan niet aan een bushalte staan.
+     *
+     * REQUIRE(properlyInitialized(), "Bus is niet correct geïnitialiseerd.");
+     */
     void changeStatus();
 };
 

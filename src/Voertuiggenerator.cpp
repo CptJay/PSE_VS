@@ -7,6 +7,7 @@
 
 Voertuiggenerator::Voertuiggenerator() {
     frequentie = 0;
+    lengte = 0;
     tijd = 0;
     init = this;
 }
@@ -55,10 +56,6 @@ void Voertuiggenerator::setType(std::string &t) {
     typeV = t;
 }
 
-std::string Voertuiggenerator::getType() {
-    return typeV;
-}
-
 void Voertuiggenerator::setL(int l) {
     lengte = l;
 }
@@ -77,3 +74,10 @@ bool Voertuiggenerator::generatePossible() {
     return true;
 }
 
+double Voertuiggenerator::getTijd() {
+    return tijd;
+}
+
+bool Voertuiggenerator::properlyInitialized() const{
+    return init == this;
+}

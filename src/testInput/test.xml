@@ -57,4 +57,9 @@
         <positie>80</positie>
         <type>politiecombi</type>
     </VOERTUIG>
+    <VOERTUIGGENERATOR>
+        <baan>Middelheimlaan</baan>
+        <frequentie>5</frequentie>
+        <type>auto</type>
+    </VOERTUIGGENERATOR>
 </VERKEERSSIMULATIE>

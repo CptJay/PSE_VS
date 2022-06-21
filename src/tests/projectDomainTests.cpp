@@ -186,13 +186,11 @@ EXPECT_TRUE(bh->properlyInitialized());
 delete bh;
 }
 
-//TEST_F(projectDomainTests, DefaultConstructorKruispunt) {
-//Kruispunt* kp = new Kruispunt;
-//std::map<Baan*, int> banen;
-//EXPECT_EQ(banen, kp->getBanen());
-//EXPECT_TRUE(kp->properlyInitialized());
-//delete kp;
-//}
+TEST_F(projectDomainTests, DefaultConstructorKruispunt) {
+Kruispunt* kp = new Kruispunt;
+EXPECT_TRUE(kp->properlyInitialized());
+delete kp;
+}
 
 TEST_F(projectDomainTests, SetterVerkeerssimulatie) {
 Baan* baan1 = new Baan;
@@ -244,23 +242,25 @@ delete baan1;
 delete bh;
 }
 
-//TEST_F(projectDomainTests, SettersKruispunt) {
-//Kruispunt* kp = new Kruispunt;
-//Baan* baan1 = new Baan;
-//baan1->setNaam("Botermelkbaan");
-//baan1->setLengte(900);
-//Baan* baan2 = new Baan;
-//baan2->setNaam("Carnotstraat");
-//baan2->setLengte(900);
-//std::map<Baan*, int> banen;
-//banen[baan1] = 400;
-//banen[baan2] = 500;
-//kp->setBanen(banen);
-//EXPECT_EQ(banen, kp->getBanen());
-//delete kp;
-//delete baan1;
-//delete baan2;
-//}
+
+TEST_F(projectDomainTests, SettersKruispunt) {
+    Kruispunt* kp = new Kruispunt;
+    Baan* baan1 = new Baan;
+    baan1->setNaam("Botermelkbaan");
+    baan1->setLengte(900);
+    Baan* baan2 = new Baan;
+    baan2->setNaam("Carnotstraat");
+    baan2->setLengte(900);
+    std::pair<Baan*,Baan*> banen; banen.first = baan1; banen.second = baan2;
+    kp->setBanen(banen);
+    std::pair<int,int> posities; posities.first = 400; posities.second = 500;
+    kp->setPosities(posities);
+    EXPECT_EQ(banen,kp->getBanen());
+    EXPECT_EQ(posities,kp->getPosities());
+    delete kp;
+    delete baan1;
+    delete baan2;
+}
 
 TEST_F(projectDomainTests, SettersVerkeerslicht) {
 Verkeerslicht* vl = new Verkeerslicht;
@@ -357,5 +357,69 @@ EXPECT_FALSE(bus->isAanBushalte());
 delete baan1;
 delete bus;
 delete bushalte;
+}
+
+TEST_F(projectDomainTests, KruispuntSimulatie) {
+    Kruispunt* kp = new Kruispunt;
+    Baan* baan1 = new Baan;
+    baan1->setNaam("Botermelkbaan");
+    baan1->setLengte(900);
+    Baan* baan2 = new Baan;
+    baan2->setNaam("Carnotstraat");
+    baan2->setLengte(900);
+    std::pair<Baan*,Baan*> banen; banen.first = baan1; banen.second = baan2;
+    kp->setBanen(banen);
+    std::pair<int,int> posities; posities.first = 400; posities.second = 500;
+    kp->setPosities(posities);
+    Auto* a = new Auto;
+    a->setPositie(395); baan1->addVoertuig(a); a->setBaan(baan1);
+    Bus* b = new Bus;
+    b->setPositie(495); baan2->addVoertuig(b); b->setBaan(baan2);
+    kp->kruispuntSimulatie(baan1);
+    kp->kruispuntSimulatie(baan2);
+    EXPECT_FALSE(a->getPositie() == 395);
+    EXPECT_FALSE(b->getPositie() == 495);
+    posities.first = 900; kp->setPosities(posities);
+    kp->setPosities(posities);
+    a->setPositie(895); baan1->addVoertuig(a); a->setBaan(baan1);
+    kp->kruispuntSimulatie(baan1);
+    EXPECT_TRUE(a->getBaan()->getNaam() == "Carnotstraat");
+    posities.second = 900; posities.first = 400;
+    b->setPositie(895); baan2->addVoertuig(b); b->setBaan(baan2);
+    kp->setPosities(posities);
+    kp->kruispuntSimulatie(baan2);
+    EXPECT_TRUE(b->getBaan()->getNaam() == "Botermelkbaan");
+}
+
+TEST_F(projectDomainTests,DefaultConstructorVoertuiggenerator) {
+    Voertuiggenerator* g = new Voertuiggenerator;
+    EXPECT_EQ(0,g->getFrequentie());
+    EXPECT_EQ(0,g->getL());
+    EXPECT_EQ(0,g->getTijd());
+    EXPECT_TRUE(g->properlyInitialized());
+}
+
+TEST_F(projectDomainTests,VoertuiggeneratorSimulatie) {
+    Voertuiggenerator* g = new Voertuiggenerator;
+    Baan* baan1 = new Baan;
+    baan1->setNaam("Botermelkbaan");
+    baan1->setLengte(900);
+    Auto* a = new Auto;
+    a->setPositie(5); baan1->addVoertuig(a); a->setBaan(baan1);
+    g->setBaan(baan1);
+    g->setFrequentie(2);
+    string au = "auto";
+    g->setType(au);
+    g->setL(a->getLengte());
+    g->updateTijd(1);
+    g->updateTijd(1);
+    Voertuig* nieuwVoertuig = g->generateVoertuig(1);
+    EXPECT_TRUE(nieuwVoertuig == NULL);
+    a->setPositie(100);
+    g->updateTijd(1);
+    g->updateTijd(1);
+    nieuwVoertuig = g->generateVoertuig(1);
+    EXPECT_EQ(0,g->getTijd());
+    EXPECT_TRUE(nieuwVoertuig != NULL);
 }
 
