@@ -14,7 +14,7 @@ private:
     Baan* baan;
     int frequentie;
     double tijd;
-    std::string type;
+    std::string typeV;
     int lengte;
     Voertuiggenerator* init;
 public:

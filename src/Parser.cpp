@@ -14,6 +14,7 @@
 #include "iostream"
 #include "DesignByContract.h"
 #include "Voertuiggenerator.h"
+#include "Bushalte.h"
 
 using namespace std;
 
@@ -174,7 +175,6 @@ void Parser::XML(const char *filename) {
                     else if (t == "politiecombi") g->setL(6);
                 }
             }
-
         }
     }
     for (unsigned int i = 0; i < banen.size(); i++) { //moet dit wel hier? moeten we niet sorteren na elke simulatiestap?

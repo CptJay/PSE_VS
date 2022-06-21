@@ -134,6 +134,7 @@ TEST_F(projectOutputTests, BasicOutput){
     myfile.close();
 
     //delete pointers
+    EXPECT_TRUE(FileCompare("src/testOutput/BasicExport.txt","src/testOutput/BasicExportExpected.txt"));
 }
 
 TEST_F(projectOutputTests, GrafischeOutput){

@@ -3,6 +3,7 @@
 //
 
 #include "Voertuiggenerator.h"
+#include "Voertuig.h"
 
 Voertuiggenerator::Voertuiggenerator() {
     frequentie = 0;
@@ -39,11 +40,11 @@ Voertuig* Voertuiggenerator::generateVoertuig(double simulatietijd) {
         tijd = 0;
         bool generate = generatePossible();
         if (generate) {
-            if (type == "auto") nieuwVoertuig = new Auto;
-            else if (type == "bus") nieuwVoertuig = new Bus;
-            else if (type == "brandweerwagen") nieuwVoertuig = new Brandweerwagen;
-            else if (type == "ziekenwagen") nieuwVoertuig = new Ziekenwagen;
-            else if (type == "politiecombi") nieuwVoertuig = new Politiecombi;
+            if (typeV == "auto") nieuwVoertuig = new Auto;
+            else if (typeV == "bus") nieuwVoertuig = new Bus;
+            else if (typeV == "brandweerwagen") nieuwVoertuig = new Brandweerwagen;
+            else if (typeV == "ziekenwagen") nieuwVoertuig = new Ziekenwagen;
+            else if (typeV == "politiecombi") nieuwVoertuig = new Politiecombi;
             nieuwVoertuig->setBaan(baan);
         }
     }
@@ -51,11 +52,11 @@ Voertuig* Voertuiggenerator::generateVoertuig(double simulatietijd) {
 }
 
 void Voertuiggenerator::setType(std::string &t) {
-    type = t;
+    typeV = t;
 }
 
 std::string Voertuiggenerator::getType() {
-    return type;
+    return typeV;
 }
 
 void Voertuiggenerator::setL(int l) {

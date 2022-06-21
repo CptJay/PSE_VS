@@ -156,3 +156,21 @@ TEST_F(projectInputTests, XMLSyntaxError){
         writeOut = "src/testOutput/XMLSyntaxError" + ToString(fileCounter) + ".txt";
     }
 }
+
+TEST_F(projectInputTests, Kruispunt){
+    ASSERT_TRUE(DirectoryExists("src"));
+    ASSERT_TRUE(DirectoryExists("src/testInput"));
+    ASSERT_TRUE(DirectoryExists("src/testOutput"));
+
+    ofstream myfile;
+    SuccessEnum importResult;
+    string fileName = "src/testInput/LegalInfo5.xml";
+    string writeOut = "src/testOutput/LegalInfo5.txt";
+
+    myfile.open("src/testInput/LegalInfo5.txt");
+    importResult = projectImporter::importVerkeerssimulatie(fileName.c_str(), myfile, verkeerssimulatie);
+    myfile.close();
+
+    ASSERT_EQ(Succes, importResult);
+
+}

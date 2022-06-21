@@ -10,16 +10,16 @@
 
 #include <string>
 #include <vector>
+#include "set"
 #include "DesignByContract.h"
-#include "Voertuig.h"
-#include "Verkeerslicht.h"
-#include "Bushalte.h"
-#include "Voertuiggenerator.h"
 
 
+class Verkeerslicht;
+class Bushalte;
 class Voertuiggenerator;
 class Kruispunt;
 class Voertuig;
+
 
 /** @class Baan
  * @brief Voorstelling van een baan.
@@ -86,6 +86,7 @@ public:
      *
      */
     void sorteerVoertuigen();
+
     void addVoertuig(Voertuig* b);
     void addVerkeerslicht(Verkeerslicht* vl);
     void verwijderVoertuigen();

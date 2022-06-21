@@ -6,6 +6,8 @@
 #include "Baan.h"
 #include "Verkeerslicht.h"
 #include "Kruispunt.h"
+#include "Voertuiggenerator.h"
+#include "Baan.h"
 
 using namespace std;
 
@@ -51,6 +53,9 @@ SuccessEnum projectImporter::importVerkeerssimulatie(const char *inputfilename, 
         map<string, Verkeerslicht*> verkeerslichten;
         map<string, vector<Bushalte *> > bushalten;
         map<string, vector<Voertuig *> > voertuigen;
+        map<string, Voertuiggenerator*> voertuiggeneratoren;
+        map<pair<string, string>, Kruispunt* > kruispunten;
+
 //        bool Cleanup = false;
 
         for (TiXmlNode *node = root->FirstChild(); node != NULL; node = node->NextSibling()) {
@@ -231,7 +236,83 @@ SuccessEnum projectImporter::importVerkeerssimulatie(const char *inputfilename, 
                 bushalten[baanString].push_back(bushalte);
 
             } else if (strcmp(node->Value(), "KRUISPUNT") == 0) {
-                continue;
+                TiXmlElement* baanOneElement = node->FirstChildElement();
+                TiXmlElement* baanTwoElement = baanOneElement->NextSiblingElement();
+
+                pair<int, int> tempPos;
+                pair<string,string> tempBaanNamen;
+
+                if (baanOneElement == NULL || baanTwoElement == NULL) {
+                    errStream << "[Ongeldige informatie] Onvolledige kruispunt ingelezen. Kruispunt wordt genegeerd."
+                              << endl;
+                    endResult = PartialImport;
+                    continue;
+                }
+
+                string baanOneString = baanOneElement->FirstChild()->ToText()->Value();
+                string baanTwoString = baanTwoElement->FirstChild()->ToText()->Value();
+                string positieOneString = baanOneElement->Attribute("positie");
+                string positieTwoString = baanTwoElement->Attribute("positie");
+
+                int positieOne;
+                int positieTwo;
+
+                sscanf(positieOneString.c_str(), "%d", &positieOne);
+                sscanf(positieTwoString.c_str(), "%d", &positieTwo);
+
+                if (positieOne < 0) {
+                    errStream
+                            << "[Ongeldige informatie] Positie van baan kan niet negatief zijn. Kruispunt wordt genegeerd."
+                            << endl;
+                    endResult = PartialImport;
+                    continue;
+                }
+                if (positieTwo < 0) {
+                    errStream
+                            << "[Ongeldige informatie] Positie van baan kan niet negatief zijn. Kruispunt wordt genegeerd."
+                            << endl;
+                    endResult = PartialImport;
+                    continue;
+                }
+
+                tempPos.first = positieOne;
+                tempPos.second = positieTwo;
+                tempBaanNamen.first = baanOneString;
+                tempBaanNamen.second = baanTwoString;
+                Kruispunt* kruispunt = new Kruispunt;
+                kruispunt->setPosities(tempPos);
+                kruispunten[tempBaanNamen] = kruispunt;
+
+            } else if (strcmp(node->Value(), "VOERTUIGGENERATOR") == 0){
+                TiXmlNode* baanNode = node->FirstChild("baan");
+                TiXmlNode* frequentieNode = node->FirstChild("frequentie");
+
+                if (baanNode == NULL || frequentieNode == NULL){
+                    errStream << "[Ongeldige informatie] Onvolledige voertuiggenerator ingelezen. Voertuiggenerator wordt genegeerd."
+                              << endl;
+                    endResult = PartialImport;
+                    continue;
+                }
+
+                string baanString = baanNode->FirstChild()->ToText()->Value();
+                string frequentieString = frequentieNode->FirstChild()->ToText()->Value();
+
+                int frequentie;
+
+                sscanf(frequentieString.c_str(), "%d", &frequentie);
+
+                if (frequentie < 0){
+                    errStream << "[Ongeldige informatie] Frequentie van generator kan niet negatief zijn. Voertuiggenerator wordt genegeerd."
+                            << endl;
+                    endResult = PartialImport;
+                    continue;
+                }
+                
+                Voertuiggenerator* voertuiggenerator = new Voertuiggenerator;
+                voertuiggenerator->setFrequentie(frequentie);
+                voertuiggeneratoren[baanString] = voertuiggenerator;
+                
+                
             } else {
                 errStream << "[Onherkenbaar element] Element \"" << node->Value() <<"\" wordt niet herkend. Element wordt genegeerd." << endl;
                 continue;
@@ -275,7 +356,7 @@ SuccessEnum projectImporter::importVerkeerssimulatie(const char *inputfilename, 
                         banen[i]->addBushalte(bushalten[baanNaam][u]);
                     }
                 } else {
-                    //bushalte niet gevonden
+                    // bushalte niet gevonden
                 }
             }
 
@@ -287,11 +368,38 @@ SuccessEnum projectImporter::importVerkeerssimulatie(const char *inputfilename, 
                         banen[i]->addVoertuig(voertuigen[baanNaam][u]);
                     }
                 } else{
-                    //voertuig niet gevonden
+                    // voertuig niet gevonden
+                }
+            }
+            
+            // voertuiggeneratoren
+            for (long unsigned int j = 0; j < voertuiggeneratoren.size(); j++) {
+                if (voertuiggeneratoren.find(baanNaam) != voertuiggeneratoren.end()){
+                    voertuiggeneratoren[baanNaam]->setBaan(banen[i]);
+                    banen[i]->addGenerator(voertuiggeneratoren[baanNaam]);
+                } else {
+                    // voertuiggeneratoren
+                }
+            }
+
+
+            // kruispunten
+            for (std::map<pair<string, string>, Kruispunt* >::iterator it = kruispunten.begin(); it != kruispunten.end(); it++){
+                pair<Baan*, Baan*> kruispunt;
+                if (it->first.first == baanNaam){
+                    for (vector<Baan* >::iterator itx = banen.begin(); itx != banen.end(); itx++){
+                        if (it->first.second == (*itx)->getNaam()){
+                            kruispunt.first = banen[i];
+                            kruispunt.second = (*itx);
+
+                            banen[i]->addKruispunt(it->second);
+                            (*itx)->addKruispunt(it->second);
+                            it->second->setBanen(kruispunt);
+                        }
+                    }
                 }
             }
         }
-
         game.setBanen(banen);
     }
 

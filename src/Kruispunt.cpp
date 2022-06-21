@@ -3,6 +3,7 @@
 //
 
 #include "Kruispunt.h"
+#include "Voertuig.h"
 #include <map>
 #include <cstdlib>
 #include <ctime>
