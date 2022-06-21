@@ -112,14 +112,18 @@ public:
      * REQUIRE(properlyInitialized(), "Verkeerssimulatie is niet correct geïnitialiseerd");
      */
     void automatischeSimulatie();
-    /** Voegt een baan toe aan de verkeerssimulatie.
+    /** Zorgt ervoor dat de vectoren allemaal ge-erased worden.
      *
-     * @param b Baan
      *
-     * REQUIRE(properlyInitialized(), "Verkeerssimulatie is niet correct geïnitialiseerd");
+     * REQUIRE(properlyInitialized(), "Verkeerssimulatie was niet correct geïnitialiseerd.");
+     * ENSURE(banen.empty(), "Vector banen in verkeerssimulatie is niet leeg");
      */
-
     void herstart();
+    /** Zorgt voor één simulatiestap.
+     * Dit blijkt handig te zijn voor het exporteren van de verkeerssimulatie.
+     *
+     * REQUIRE(properlyInitialized(), "Verkeerssimulatie was niet correct geïnitialiseerd.");
+     */
     void exportSimulatie();
 };
 

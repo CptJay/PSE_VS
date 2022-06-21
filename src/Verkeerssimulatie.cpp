@@ -160,11 +160,12 @@ void Verkeerssimulatie::herstart() {
     REQUIRE(properlyInitialized(), "Verkeerssimulatie was niet correct geïnitialiseerd.");
     for (vector<Baan*>::iterator it = banen.begin(); it != banen.end(); it++) delete *it;
     banen.clear();
-    ENSURE(banen.empty(), "Vector banen in verkeersimulatie is niet leeg");
+    ENSURE(banen.empty(), "Vector banen in verkeerssimulatie is niet leeg");
 }
 
 
 void Verkeerssimulatie::exportSimulatie() {
+    REQUIRE(properlyInitialized(), "Verkeerssimulatie was niet correct geïnitialiseerd.");
     for (unsigned int i=0; i<banen.size(); i++) {
         vector<Voertuig*> vt = banen[i]->getVoertuigen();
         if (vt.size() == 1) {

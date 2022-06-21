@@ -17,6 +17,15 @@ enum SuccessEnum {
 
 class projectImporter {
 public:
+    /**
+     *
+     * @param inputfilename bestandsnaam waaruit ingelezen wordt.
+     * @param errStream het naartoe te schrijven bestand.
+     * @param game Verkeerssimulatie
+     * @return succesrate van het importeren.
+     *
+     * REQUIRE(game.properlyInitialized(), "game wasn't initialized when passed to VerkeerssimulatieImporter");
+     */
     static SuccessEnum importVerkeerssimulatie(const char* inputfilename, std::ostream& errStream, Verkeerssimulatie& game);
 };
 

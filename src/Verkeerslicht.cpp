@@ -82,6 +82,7 @@ bool Verkeerslicht::properlyInitialized() const {
 }
 
 void Verkeerslicht::verkeerslichtSimulatie(double simulatietijd) {
+    REQUIRE(properlyInitialized(),"Verkeerslicht is niet correct geïnitialiseerd.");
     Voertuig* eerste = baan->getEersteVoertuig(positie);
     if (tijd >= cycles) {
         changeColor();

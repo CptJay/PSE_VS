@@ -115,15 +115,9 @@ public:
      *
      * @param simulatietijd Simulatietijd.
      *
-     *
+     * REQUIRE(properlyInitialized(),"Verkeerslicht is niet correct geïnitialiseerd.");
      */
     void verkeerslichtSimulatie(double simulatietijd);
-    /** Eerste voertuig dat zich voor het verkeerslicht bevindt.
-     *
-     * @return Voertuig object.
-     */
-
-
 };
 
 
