@@ -107,12 +107,12 @@ TEST_F(projectOutputTests, BasicOutput){
     // Basic
     vector<Baan*> banen;
     Baan* baan = new Baan;
-    baan->setNaam("Omdehoek");
+    baan->setNaam("Middelheim");
     baan->setLengte(500);
     banen.push_back(baan);
 
     Baan* baan2 = new Baan;
-    baan2->setNaam("Omdehoek2");
+    baan2->setNaam("Flora");
     baan2->setLengte(200);
     banen.push_back(baan2);
 
@@ -121,7 +121,6 @@ TEST_F(projectOutputTests, BasicOutput){
     anAuto->setBaan(baan);
     anAuto->setLengte(7);
     anAuto->setSnelheid(1);
-//    anAuto->setVersnelling(5);
     baan->addVoertuig(anAuto);
 
     Politiecombi* politiecombi = new Politiecombi;
@@ -132,11 +131,17 @@ TEST_F(projectOutputTests, BasicOutput){
     baan2->addVoertuig(politiecombi);
 
     Verkeerslicht* verkeerslicht = new Verkeerslicht;
-//    verkeerslicht->changeColor();
+    verkeerslicht->changeColor();
     verkeerslicht->setPositie(30);
     verkeerslicht->setCycles(20);
     verkeerslicht->setBaan(baan);
     baan->addVerkeerslicht(verkeerslicht);
+
+    Bushalte* bushalte = new Bushalte;
+    bushalte->setBaan(baan);
+    bushalte->setPositie(30);
+    bushalte->setWachttijd(20);
+    baan->addBushalte(bushalte);
 
     pair<Baan*, Baan* > tempBanen;
     tempBanen.first = baan;
@@ -172,12 +177,12 @@ TEST_F(projectOutputTests, GrafischeOutput){
     // Grafisch
     vector<Baan*> banen;
     Baan* baan = new Baan;
-    baan->setNaam("Omdehoek");
+    baan->setNaam("Middelheim");
     baan->setLengte(500);
     banen.push_back(baan);
 
     Baan* baan2 = new Baan;
-    baan2->setNaam("Omdehoek2");
+    baan2->setNaam("Flora");
     baan2->setLengte(200);
     banen.push_back(baan2);
 
@@ -185,8 +190,7 @@ TEST_F(projectOutputTests, GrafischeOutput){
     anAuto->setPositie(20);
     anAuto->setBaan(baan);
     anAuto->setLengte(7);
-    anAuto->setSnelheid(1);
-//    anAuto->setVersnelling(5);
+    anAuto->setSnelheid(10);
     baan->addVoertuig(anAuto);
 
     Politiecombi* politiecombi = new Politiecombi;
@@ -197,11 +201,17 @@ TEST_F(projectOutputTests, GrafischeOutput){
     baan2->addVoertuig(politiecombi);
 
     Verkeerslicht* verkeerslicht = new Verkeerslicht;
-//    verkeerslicht->changeColor();
+    verkeerslicht->changeColor();
     verkeerslicht->setPositie(30);
-    verkeerslicht->setCycles(20);
+    verkeerslicht->setCycles(8);
     verkeerslicht->setBaan(baan);
     baan->addVerkeerslicht(verkeerslicht);
+
+    Bushalte* bushalte = new Bushalte;
+    bushalte->setBaan(baan);
+    bushalte->setPositie(30);
+    bushalte->setWachttijd(20);
+    baan->addBushalte(bushalte);
 
     pair<Baan*, Baan* > tempBanen;
     tempBanen.first = baan;

@@ -145,6 +145,9 @@ void GrafischeExporter::overview(ostream &onstream, Baan* baan) {
                  autoOutput += "-";
              }
          }
+         if (baan->getVoertuigen().empty()){
+             autoOutput += "-";
+         }
          for (long unsigned int j = 0; j < baan->getBushaltes().size(); j++){
              if (baan->getBushaltes()[j]->getPositie() == i){
                  bushalteOutput += "H";
